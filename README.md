@@ -11,7 +11,7 @@ Team Cannon Brawl members
 
 Approach
 --------------------------------------------------
-We initially tried writing the ghost AI in the raw assembly, but soon found out it was quite tedius. The approach then
+We initially tried writing the ghost AI in the raw assembly, but soon found out it was quite tedious. The approach then
 turned to writing a compiler in haskell that turns abstract haskell data structures into compiled Lambda Man AI
 assembly. Concurrently some of us started to implement a simulator for the game using Haskell so we could prototype AI
 strategies without a working compiler first.
@@ -19,9 +19,6 @@ strategies without a working compiler first.
 Features of the compiler including typed expressions using Haskell's type checker, automatic tail call optimization,
 reference types to make use of pascal extension. We have written a quad tree to optimize location lookups, and also a path
 finder using the quad tree and breadth first search.
-
-For the ghost AI we wrote a simple assembler to allow for jumps, and wrote the assembly directly.
-
 
 Potential Optimizations
 --------------------------------------------------
@@ -34,6 +31,20 @@ optimizations include:
 * Doing multiple pathfinding per step is kind of inefficient. Could use some sort of lazy tree structure to cache pathfinding
   info to avoid redoing calculations.
 
+Ghost AI
+--------------------------------------------------
+
+For the ghost AI we wrote a simple preprocessor to allow for symbolic jumps, symbolic globals, and a call stack.
+See code/flanker3.ghc for an example.
+
+Features of our submitted ghost:
+
+ * We keeps a ring buffer of lambdaman positions and find a point in front of lambdaman.
+ * The target position is offset in a different direction for each ghost based on its index. This makes the ghosts tend to flank lambdaman. We found it important that ghosts not bunch up so they could surround lamdbaman in a corridor.
+ * There is a little randomness so ghosts can get out of dead ends.
+ * In fright mode, the ghost run away from lambdaman.
+
+We ran a tests in our local game simulation to evaluate the AI and optimized the constants.
 
 To Build and Run
 --------------------------------------------------
