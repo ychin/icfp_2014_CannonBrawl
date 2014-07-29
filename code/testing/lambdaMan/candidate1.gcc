@@ -1,0 +1,2377 @@
+DUM 80               ; 0: 
+LDF 143              ; roundUpToPower2
+LDF 274              ; findQuadLeaf
+LDF 427              ; replaceQuadLeaf
+LDF 461              ; fAllocateQuadTree
+LDF 478              ; map
+LDF 481              ; lambdaMainStep
+LDF 494              ; lambdaManMain
+LDF 552              ; lmDecideDirection
+LDF 567              ; fastMapLookup
+LDF 576              ; mapLookup
+LDF 583              ; parseMapSize
+LDF 602              ; parseWorldState
+LDF 655              ; parseMapRow
+LDF 670              ; parseMapState
+LDF 686              ; nth
+LDF 692              ; lam_getGhostPos
+LDF 715              ; lam_pathfindDistance
+LDF 720              ; lam_snd
+LDF 768              ; lam_aiBad
+LDF 836              ; lam_aiHunter
+LDF 847              ; lam_myAbs
+LDF 874              ; lam_filter
+LDF 902              ; lam_tryImproveResults
+LDF 918              ; lam_tryImproveFruit
+LDF 938              ; lam_tryImprovePill
+LDF 959              ; lam_tryImprovePowerPill
+LDF 986              ; lam_closerLocation
+LDF 989              ; lam_makeMapInfo
+LDF 1016             ; lam_getInfoFromMap
+LDF 1056             ; lam_getInfoFromMapRecursive
+LDF 1103             ; lam_getDistanceToBest_Safe
+LDF 1166             ; lam_getDistToNearestVisibleGhostPathfind
+LDF 1177             ; lam_getPlayerDistToNearestGhost
+LDF 1200             ; lam_inScaredMode
+LDF 1237             ; lam_inKillMode
+LDF 1247             ; lam_inFightMode
+LDF 1282             ; lam_scoreCoord_scaredMode
+LDF 1290             ; lam_scoreCoord_safeMode
+LDF 1295             ; lam_scoreCoord_killMode
+LDF 1314             ; lam_scoreNeighbor
+LDF 1350             ; lam_scoreCoord
+LDF 1361             ; lam_canStep
+LDF 1379             ; lam_makeDirsAndCoords
+LDF 1395             ; lam_addPosition
+LDF 1430             ; lam_getOffset
+LDF 1533             ; lam_getDistanceToBest_Scared
+LDF 1544             ; lam_max
+LDF 1558             ; lam_calcGhostDangerAtPoint
+LDF 1585             ; lam_totalGhostDanger
+LDF 1591             ; lam_count
+LDF 1595             ; lam_sum
+LDF 1600             ; lam_plus
+LDF 1616             ; lam_foldl
+LDF 1649             ; lam_getDistanceToGhost
+LDF 1655             ; lam_isGhostVisible
+LDF 1662             ; lam_identity
+LDF 1669             ; lam_getDistanceToPill
+LDF 1690             ; lam_getDistanceToFruit
+LDF 1711             ; lam_getDistanceToPowerPill
+LDF 1736             ; lam_zip
+LDF 1751             ; lam_foldr1
+LDF 1765             ; lam_hasOneElement
+LDF 1773             ; lam_minimumOver
+LDF 1781             ; lam_selectMin
+LDF 1805             ; lam_manhattanDistance
+LDF 1821             ; lam_abs
+LDF 1838             ; lam_subtractPos
+LDF 1849             ; pAp2_1
+LDF 1856             ; fromMaybe
+LDF 1865             ; caseMaybe
+LDF 2193             ; pathfind
+LDF 2199             ; reloadQueueAndPop
+LDF 2217             ; reverseWithAccum
+LDF 2220             ; coordEq
+LDF 2278             ; manhattanDir
+LDF 2293             ; mapMaybe
+LDF 2315             ; lookup
+LDF 2322             ; appendMaybe
+LDF 2340             ; foldMap1
+LDF 2365             ; foldMap
+LDF 2369             ; _trampoline
+TRAP 80
+LD 0 0    ; num      ; 83: roundUpToPower2/tift
+RTN
+LDC 2                ; 85: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift/tift
+RTN
+LDC 4                ; 87: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift/tiff
+RTN
+LD 0 0    ; num      ; 89: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift
+LDC 2
+CGTE
+LDC 0
+CEQ
+TSEL 85 87           ; t: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift/tift  f: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift/tiff
+LDC 8                ; 95: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tiff
+RTN
+LD 0 0    ; num      ; 97: roundUpToPower2/tiff/tift/tift/tift/tift/tift
+LDC 4
+CGTE
+LDC 0
+CEQ
+TSEL 89 95           ; t: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tift  f: roundUpToPower2/tiff/tift/tift/tift/tift/tift/tiff
+LDC 16               ; 103: roundUpToPower2/tiff/tift/tift/tift/tift/tiff
+RTN
+LD 0 0    ; num      ; 105: roundUpToPower2/tiff/tift/tift/tift/tift
+LDC 8
+CGTE
+LDC 0
+CEQ
+TSEL 97 103          ; t: roundUpToPower2/tiff/tift/tift/tift/tift/tift  f: roundUpToPower2/tiff/tift/tift/tift/tift/tiff
+LDC 32               ; 111: roundUpToPower2/tiff/tift/tift/tift/tiff
+RTN
+LD 0 0    ; num      ; 113: roundUpToPower2/tiff/tift/tift/tift
+LDC 16
+CGTE
+LDC 0
+CEQ
+TSEL 105 111         ; t: roundUpToPower2/tiff/tift/tift/tift/tift  f: roundUpToPower2/tiff/tift/tift/tift/tiff
+LDC 64               ; 119: roundUpToPower2/tiff/tift/tift/tiff
+RTN
+LD 0 0    ; num      ; 121: roundUpToPower2/tiff/tift/tift
+LDC 32
+CGTE
+LDC 0
+CEQ
+TSEL 113 119         ; t: roundUpToPower2/tiff/tift/tift/tift  f: roundUpToPower2/tiff/tift/tift/tiff
+LDC 128              ; 127: roundUpToPower2/tiff/tift/tiff
+RTN
+LD 0 0    ; num      ; 129: roundUpToPower2/tiff/tift
+LDC 64
+CGTE
+LDC 0
+CEQ
+TSEL 121 127         ; t: roundUpToPower2/tiff/tift/tift  f: roundUpToPower2/tiff/tift/tiff
+LDC 256              ; 135: roundUpToPower2/tiff/tiff
+RTN
+LD 0 0    ; num      ; 137: roundUpToPower2/tiff
+LDC 128
+CGTE
+LDC 0
+CEQ
+TSEL 129 135         ; t: roundUpToPower2/tiff/tift  f: roundUpToPower2/tiff/tiff
+LD 0 0    ; num      ; 143: roundUpToPower2
+LDC 1
+CEQ
+LD 0 0    ; num
+LDC 2
+CEQ
+ADD
+LD 0 0    ; num
+LDC 4
+CEQ
+ADD
+LD 0 0    ; num
+LDC 8
+CEQ
+ADD
+LD 0 0    ; num
+LDC 16
+CEQ
+ADD
+LD 0 0    ; num
+LDC 32
+CEQ
+ADD
+LD 0 0    ; num
+LDC 64
+CEQ
+ADD
+LD 0 0    ; num
+LDC 128
+CEQ
+ADD
+LD 0 0    ; num
+LDC 256
+CEQ
+ADD
+LDC 1
+CGTE
+TSEL 83 137          ; t: roundUpToPower2/tift  f: roundUpToPower2/tiff
+LD 0 0    ; quadTree ; 181: findQuadLeaf/tift
+RTN
+LD 0 0    ; quadTree ; 183: findQuadLeaf/tiff/tift/tift
+CAR
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; pos
+LD 1 1    ; findQuadLeaf
+TAP 3
+LD 0 0    ; quadTree ; 192: findQuadLeaf/tiff/tift/tiff
+CAR
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; pos
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+LD 0 2    ; pos
+CDR
+CONS
+LD 1 1    ; findQuadLeaf
+TAP 3
+LD 0 2    ; pos      ; 209: findQuadLeaf/tiff/tift
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 183 192         ; t: findQuadLeaf/tiff/tift/tift  f: findQuadLeaf/tiff/tift/tiff
+LD 0 0    ; quadTree ; 218: findQuadLeaf/tiff/tiff/tift
+CDR
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; pos
+CAR
+LD 0 2    ; pos
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+CONS
+LD 1 1    ; findQuadLeaf
+TAP 3
+LD 0 0    ; quadTree ; 235: findQuadLeaf/tiff/tiff/tiff
+CDR
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; pos
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+LD 0 2    ; pos
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+CONS
+LD 1 1    ; findQuadLeaf
+TAP 3
+LD 0 2    ; pos      ; 256: findQuadLeaf/tiff/tiff
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 218 235         ; t: findQuadLeaf/tiff/tiff/tift  f: findQuadLeaf/tiff/tiff/tiff
+LD 0 2    ; pos      ; 265: findQuadLeaf/tiff
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 209 256         ; t: findQuadLeaf/tiff/tift  f: findQuadLeaf/tiff/tiff
+LD 0 1    ; quadTreeSize ; 274: findQuadLeaf
+LDC 1
+CEQ
+TSEL 181 265         ; t: findQuadLeaf/tift  f: findQuadLeaf/tiff
+LD 0 2    ; newValue ; 278: replaceQuadLeaf/tift
+RTN
+LD 0 0    ; quadTree ; 280: replaceQuadLeaf/tiff/tift/tift
+CAR
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; newValue
+LD 0 3    ; pos
+LD 1 2    ; replaceQuadLeaf
+AP 4
+LD 0 0    ; quadTree
+CAR
+CDR
+CONS
+LD 0 0    ; quadTree
+CDR
+CAR
+LD 0 0    ; quadTree
+CDR
+CDR
+CONS
+CONS
+RTN
+LD 0 0    ; quadTree ; 303: replaceQuadLeaf/tiff/tift/tiff
+CAR
+CAR
+LD 0 0    ; quadTree
+CAR
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; newValue
+LD 0 3    ; pos
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+LD 0 3    ; pos
+CDR
+CONS
+LD 1 2    ; replaceQuadLeaf
+AP 4
+CONS
+LD 0 0    ; quadTree
+CDR
+CAR
+LD 0 0    ; quadTree
+CDR
+CDR
+CONS
+CONS
+RTN
+LD 0 3    ; pos      ; 334: replaceQuadLeaf/tiff/tift
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 280 303         ; t: replaceQuadLeaf/tiff/tift/tift  f: replaceQuadLeaf/tiff/tift/tiff
+LD 0 0    ; quadTree ; 343: replaceQuadLeaf/tiff/tiff/tift
+CAR
+CAR
+LD 0 0    ; quadTree
+CAR
+CDR
+CONS
+LD 0 0    ; quadTree
+CDR
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; newValue
+LD 0 3    ; pos
+CAR
+LD 0 3    ; pos
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+CONS
+LD 1 2    ; replaceQuadLeaf
+AP 4
+LD 0 0    ; quadTree
+CDR
+CDR
+CONS
+CONS
+RTN
+LD 0 0    ; quadTree ; 374: replaceQuadLeaf/tiff/tiff/tiff
+CAR
+CAR
+LD 0 0    ; quadTree
+CAR
+CDR
+CONS
+LD 0 0    ; quadTree
+CDR
+CAR
+LD 0 0    ; quadTree
+CDR
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+LD 0 2    ; newValue
+LD 0 3    ; pos
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+LD 0 3    ; pos
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+SUB
+CONS
+LD 1 2    ; replaceQuadLeaf
+AP 4
+CONS
+CONS
+RTN
+LD 0 3    ; pos      ; 409: replaceQuadLeaf/tiff/tiff
+CAR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 343 374         ; t: replaceQuadLeaf/tiff/tiff/tift  f: replaceQuadLeaf/tiff/tiff/tiff
+LD 0 3    ; pos      ; 418: replaceQuadLeaf/tiff
+CDR
+LD 0 1    ; quadTreeSize
+LDC 2
+DIV
+CGTE
+LDC 0
+CEQ
+TSEL 334 409         ; t: replaceQuadLeaf/tiff/tift  f: replaceQuadLeaf/tiff/tiff
+LD 0 1    ; quadTreeSize ; 427: replaceQuadLeaf
+LDC 1
+CEQ
+TSEL 278 418         ; t: replaceQuadLeaf/tift  f: replaceQuadLeaf/tiff
+LD 0 1    ; initialValue ; 431: fAllocateQuadTree/tift
+RTN
+LD 0 0    ; quadTreeSize ; 433: fAllocateQuadTree/tiff
+LDC 2
+DIV
+LD 0 1    ; initialValue
+LD 1 3    ; fAllocateQuadTree
+AP 2
+LD 0 0    ; quadTreeSize
+LDC 2
+DIV
+LD 0 1    ; initialValue
+LD 1 3    ; fAllocateQuadTree
+AP 2
+CONS
+LD 0 0    ; quadTreeSize
+LDC 2
+DIV
+LD 0 1    ; initialValue
+LD 1 3    ; fAllocateQuadTree
+AP 2
+LD 0 0    ; quadTreeSize
+LDC 2
+DIV
+LD 0 1    ; initialValue
+LD 1 3    ; fAllocateQuadTree
+AP 2
+CONS
+CONS
+RTN
+LD 0 0    ; quadTreeSize ; 461: fAllocateQuadTree
+LDC 1
+CEQ
+TSEL 431 433         ; t: fAllocateQuadTree/tift  f: fAllocateQuadTree/tiff
+LDC 0                ; 465: map/tift
+RTN
+LD 0 1    ; xs       ; 467: map/tiff
+CAR
+LD 0 0    ; f
+AP 1
+LD 0 0    ; f
+LD 0 1    ; xs
+CDR
+LD 1 4    ; map
+AP 2
+CONS
+RTN
+LD 0 1    ; xs       ; 478: map
+ATOM
+TSEL 465 467         ; t: map/tift  f: map/tiff
+LD 0 0    ; aiState  ; 481: lambdaMainStep
+LD 0 0    ; aiState
+LD 0 1    ; worldState
+LD 1 19   ; lam_aiHunter
+AP 2
+CONS
+RTN
+LD 0 0    ; parsedState ; 488: lambdaManMain/tlet
+LDC 1
+CONS
+LD 2 5    ; lambdaMainStep
+CONS
+RTN
+LD 0 0    ; worldState ; 494: lambdaManMain
+LD 1 11   ; parseWorldState
+AP 1
+LDF 488              ; lambdaManMain/tlet
+TAP 1
+LDC 3                ; 499: lmDecideDirection/tlet/tlet/tlet/tift
+RTN
+LDC 1                ; 501: lmDecideDirection/tlet/tlet/tlet/tiff/tift
+RTN
+LD 0 0    ; curDir   ; 503: lmDecideDirection/tlet/tlet/tlet/tiff/tiff
+RTN
+LD 0 0    ; curDir   ; 505: lmDecideDirection/tlet/tlet/tlet/tiff
+LDC 2
+CEQ
+LD 0 0    ; curDir
+LDC 0
+CEQ
+ADD
+LD 2 0    ; leftSpot
+LDC 0
+CEQ
+LD 0 0    ; curDir
+LDC 3
+CEQ
+MUL
+ADD
+LDC 1
+CGTE
+TSEL 501 503         ; t: lmDecideDirection/tlet/tlet/tlet/tiff/tift  f: lmDecideDirection/tlet/tlet/tlet/tiff/tiff
+LD 1 0    ; rightSpot ; 523: lmDecideDirection/tlet/tlet/tlet
+LDC 0
+CEQ
+LD 0 0    ; curDir
+LDC 1
+CEQ
+MUL
+TSEL 499 505         ; t: lmDecideDirection/tlet/tlet/tlet/tift  f: lmDecideDirection/tlet/tlet/tlet/tiff
+LD 2 1    ; curLMPos ; 531: lmDecideDirection/tlet/tlet
+CDR
+CDR
+CAR
+LDF 523              ; lmDecideDirection/tlet/tlet/tlet
+TAP 1
+LD 1 0    ; parsedState ; 537: lmDecideDirection/tlet
+LD 1 1    ; curLMPos
+CDR
+CAR
+CAR
+LDC 1
+ADD
+LD 1 1    ; curLMPos
+CDR
+CAR
+CDR
+LD 2 8    ; fastMapLookup
+AP 3
+LDF 531              ; lmDecideDirection/tlet/tlet
+TAP 1
+LD 0 0    ; parsedState ; 552: lmDecideDirection
+LD 0 1    ; curLMPos
+CDR
+CAR
+CAR
+LDC 1
+SUB
+LD 0 1    ; curLMPos
+CDR
+CAR
+CDR
+LD 1 8    ; fastMapLookup
+AP 3
+LDF 537              ; lmDecideDirection/tlet
+TAP 1
+LD 0 0    ; parsedState ; 567: fastMapLookup
+CAR
+LD 0 0    ; parsedState
+CDR
+LD 0 1    ; posX
+LD 0 2    ; posY
+CONS
+LD 1 1    ; findQuadLeaf
+TAP 3
+LD 0 0    ; mapState ; 576: mapLookup
+LD 0 2    ; posY
+LD 1 14   ; nth
+AP 2
+LD 0 1    ; posX
+LD 1 14   ; nth
+TAP 2
+LD 0 1    ; parsedState ; 583: parseMapSize
+CAR
+LD 1 49   ; lam_count
+LDC 0
+LD 0 0    ; mapState
+LD 1 52   ; lam_foldl
+AP 3
+LD 1 49   ; lam_count
+LDC 0
+LD 0 0    ; mapState
+CAR
+LD 1 52   ; lam_foldl
+AP 3
+LD 1 46   ; lam_max
+AP 2
+LD 1 0    ; roundUpToPower2
+AP 1
+CONS
+RTN
+LD 0 0    ; worldState ; 602: parseWorldState
+CAR
+LDC 0
+LDC 1
+LDC 0
+CONS
+LD 1 13   ; parseMapState
+TAP 3
+LD 0 2    ; parsedState ; 610: parseMapRow/tift
+RTN
+LD 1 0    ; mapRows  ; 612: parseMapRow/tiff/tletrec
+CDR
+LD 1 1    ; curRow
+LDC 1
+ADD
+LD 1 0    ; mapRows
+CAR
+LDC 0
+LD 1 2    ; parsedState
+LD 0 0    ; parseCol
+AP 3
+LD 2 12   ; parseMapRow
+TAP 3
+LD 0 2    ; curParsedState ; 625: parseMapRow/tiff/lam/tift
+RTN
+LD 0 0    ; remainRow ; 627: parseMapRow/tiff/lam/tiff
+CDR
+LD 0 1    ; col
+LDC 1
+ADD
+LD 0 2    ; curParsedState
+CAR
+LD 0 2    ; curParsedState
+CDR
+LD 0 0    ; remainRow
+CAR
+LD 0 1    ; col
+LD 2 1    ; curRow
+CONS
+LD 3 2    ; replaceQuadLeaf
+AP 4
+LD 0 2    ; curParsedState
+CDR
+CONS
+LD 1 0    ; parseCol
+TAP 3
+LD 0 0    ; remainRow ; 648: parseMapRow/tiff/lam
+ATOM
+TSEL 625 627         ; t: parseMapRow/tiff/lam/tift  f: parseMapRow/tiff/lam/tiff
+DUM 1                ; 651: parseMapRow/tiff
+LDF 648              ; parseMapRow/tiff/lam
+LDF 612              ; parseMapRow/tiff/tletrec
+TRAP 1
+LD 0 0    ; mapRows  ; 655: parseMapRow
+ATOM
+TSEL 610 651         ; t: parseMapRow/tift  f: parseMapRow/tiff
+LD 1 0    ; mapState ; 658: parseMapState/tlet
+LD 1 1    ; curRow
+LD 0 0    ; parsedSizeState
+CDR
+LDC 0
+LD 2 3    ; fAllocateQuadTree
+AP 2
+LD 0 0    ; parsedSizeState
+CDR
+CONS
+LD 2 12   ; parseMapRow
+TAP 3
+LD 0 0    ; mapState ; 670: parseMapState
+LD 0 2    ; parsedState
+LD 1 10   ; parseMapSize
+AP 2
+LDF 658              ; parseMapState/tlet
+TAP 1
+LD 0 0    ; xs       ; 676: nth/tift
+CAR
+RTN
+LD 0 0    ; xs       ; 679: nth/tiff
+CDR
+LD 0 1    ; n
+LDC 1
+SUB
+LD 1 14   ; nth
+TAP 2
+LD 0 1    ; n        ; 686: nth
+LDC 0
+CGT
+LDC 0
+CEQ
+TSEL 676 679         ; t: nth/tift  f: nth/tiff
+LD 0 0    ; ghost    ; 692: lam_getGhostPos
+CDR
+CAR
+RTN
+LDC 0                ; 696: lam_pathfindDistance/tift
+RTN
+LD 1 0    ; posA     ; 698: lam_pathfindDistance/tiff/tlet
+LD 1 1    ; posB
+CONS
+LD 0 0    ; pathfindResult
+CONS
+DBUG
+LD 0 0    ; pathfindResult
+CDR
+RTN
+LD 0 0    ; posA     ; 707: lam_pathfindDistance/tiff
+LD 0 1    ; posB
+LDC 300
+LD 0 2    ; parsedState
+LD 1 70   ; pathfind
+AP 4
+LDF 698              ; lam_pathfindDistance/tiff/tlet
+TAP 1
+LD 0 0    ; posA     ; 715: lam_pathfindDistance
+LD 0 1    ; posB
+LD 1 73   ; coordEq
+AP 2
+TSEL 696 707         ; t: lam_pathfindDistance/tift  f: lam_pathfindDistance/tiff
+LD 0 0    ; p        ; 720: lam_snd
+CDR
+RTN
+LD 0 0    ; validDirsAndCoords ; 723: lam_aiBad/tlet/tlet/tlet/tlet/tlet
+CAR
+CAR
+DBUG
+LD 0 0    ; validDirsAndCoords
+CAR
+CAR
+RTN
+LD 5 41   ; lam_canStep ; 731: lam_aiBad/tlet/tlet/tlet/tlet
+LD 4 0    ; aiState
+CAR
+LD 5 67   ; pAp2_1
+AP 2
+LD 0 0    ; dirsAndCoords
+LD 5 21   ; lam_filter
+AP 2
+LDF 723              ; lam_aiBad/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LD 4 42   ; lam_makeDirsAndCoords ; 741: lam_aiBad/tlet/tlet/tlet
+LD 1 0    ; playerCoord
+LD 4 67   ; pAp2_1
+AP 2
+LD 0 0    ; dirs
+LD 4 4    ; map
+AP 2
+LDF 731              ; lam_aiBad/tlet/tlet/tlet/tlet
+TAP 1
+LDC 0                ; 750: lam_aiBad/tlet/tlet
+LDC 1
+LDC 2
+LDC 3
+LDC 0
+CONS
+CONS
+CONS
+CONS
+LDF 741              ; lam_aiBad/tlet/tlet/tlet
+TAP 1
+LD 1 1    ; worldState ; 761: lam_aiBad/tlet
+CDR
+CAR
+CDR
+CAR
+LDF 750              ; lam_aiBad/tlet/tlet
+TAP 1
+LD 0 1    ; worldState ; 768: lam_aiBad
+LD 1 28   ; lam_getInfoFromMap
+AP 1
+LDF 761              ; lam_aiBad/tlet
+TAP 1
+LDC 2                ; 773: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet/tift
+RTN
+LD 7 17   ; lam_snd  ; 775: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet/tiff
+LD 0 0    ; scores
+LD 7 62   ; lam_minimumOver
+AP 2
+CAR
+CAR
+RTN
+LD 0 0    ; scores   ; 782: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet
+ATOM
+TSEL 773 775         ; t: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet/tift  f: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet/tiff
+LD 6 0    ; aiState  ; 785: lam_aiHunter/tlet/tlet/tlet/tlet/tlet/lam
+CAR
+LD 6 1    ; worldState
+LD 5 0    ; bestMapLocations
+CONS
+LD 0 0    ; neighbor
+LD 7 39   ; lam_scoreNeighbor
+TAP 3
+LDF 785              ; lam_aiHunter/tlet/tlet/tlet/tlet/tlet/lam ; 793: lam_aiHunter/tlet/tlet/tlet/tlet/tlet
+LD 0 0    ; validDirsAndCoords
+LD 6 4    ; map
+AP 2
+LDF 782              ; lam_aiHunter/tlet/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LD 5 41   ; lam_canStep ; 799: lam_aiHunter/tlet/tlet/tlet/tlet
+LD 4 0    ; aiState
+CAR
+LD 5 67   ; pAp2_1
+AP 2
+LD 0 0    ; dirsAndCoords
+LD 5 21   ; lam_filter
+AP 2
+LDF 793              ; lam_aiHunter/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LD 4 42   ; lam_makeDirsAndCoords ; 809: lam_aiHunter/tlet/tlet/tlet
+LD 1 0    ; playerCoord
+LD 4 67   ; pAp2_1
+AP 2
+LD 0 0    ; dirs
+LD 4 4    ; map
+AP 2
+LDF 799              ; lam_aiHunter/tlet/tlet/tlet/tlet
+TAP 1
+LDC 0                ; 818: lam_aiHunter/tlet/tlet
+LDC 1
+LDC 2
+LDC 3
+LDC 0
+CONS
+CONS
+CONS
+CONS
+LDF 809              ; lam_aiHunter/tlet/tlet/tlet
+TAP 1
+LD 1 1    ; worldState ; 829: lam_aiHunter/tlet
+CDR
+CAR
+CDR
+CAR
+LDF 818              ; lam_aiHunter/tlet/tlet
+TAP 1
+LD 0 1    ; worldState ; 836: lam_aiHunter
+LD 1 28   ; lam_getInfoFromMap
+AP 1
+LDF 829              ; lam_aiHunter/tlet
+TAP 1
+LDC 0                ; 841: lam_myAbs/tift
+LD 0 0    ; n
+SUB
+RTN
+LD 0 0    ; n        ; 845: lam_myAbs/tiff
+RTN
+LD 0 0    ; n        ; 847: lam_myAbs
+LDC 0
+CGTE
+LDC 0
+CEQ
+TSEL 841 845         ; t: lam_myAbs/tift  f: lam_myAbs/tiff
+LDC 0                ; 853: lam_filter/tift
+RTN
+LD 0 1    ; list     ; 855: lam_filter/tiff/tift
+CAR
+LD 0 0    ; func
+LD 0 1    ; list
+CDR
+LD 1 21   ; lam_filter
+AP 2
+CONS
+RTN
+LD 0 0    ; func     ; 864: lam_filter/tiff/tiff
+LD 0 1    ; list
+CDR
+LD 1 21   ; lam_filter
+TAP 2
+LD 0 1    ; list     ; 869: lam_filter/tiff
+CAR
+LD 0 0    ; func
+AP 1
+TSEL 855 864         ; t: lam_filter/tiff/tift  f: lam_filter/tiff/tiff
+LD 0 1    ; list     ; 874: lam_filter
+ATOM
+TSEL 853 869         ; t: lam_filter/tift  f: lam_filter/tiff
+LD 0 0    ; sourceCoord ; 877: lam_tryImproveResults/tift
+LD 0 1    ; bestResultsSoFar
+LD 0 3    ; newCoord
+LD 1 24   ; lam_tryImprovePill
+TAP 3
+LD 0 0    ; sourceCoord ; 882: lam_tryImproveResults/tiff/tift
+LD 0 1    ; bestResultsSoFar
+LD 0 3    ; newCoord
+LD 1 23   ; lam_tryImproveFruit
+TAP 3
+LD 0 0    ; sourceCoord ; 887: lam_tryImproveResults/tiff/tiff/tift
+LD 0 1    ; bestResultsSoFar
+LD 0 3    ; newCoord
+LD 1 25   ; lam_tryImprovePowerPill
+TAP 3
+LD 0 1    ; bestResultsSoFar ; 892: lam_tryImproveResults/tiff/tiff/tiff
+RTN
+LD 0 2    ; newElement ; 894: lam_tryImproveResults/tiff/tiff
+LDC 3
+CEQ
+TSEL 887 892         ; t: lam_tryImproveResults/tiff/tiff/tift  f: lam_tryImproveResults/tiff/tiff/tiff
+LD 0 2    ; newElement ; 898: lam_tryImproveResults/tiff
+LDC 4
+CEQ
+TSEL 882 894         ; t: lam_tryImproveResults/tiff/tift  f: lam_tryImproveResults/tiff/tiff
+LD 0 2    ; newElement ; 902: lam_tryImproveResults
+LDC 2
+CEQ
+TSEL 877 898         ; t: lam_tryImproveResults/tift  f: lam_tryImproveResults/tiff
+LD 0 1    ; bestResultsSoFar ; 906: lam_tryImproveFruit/tift
+CAR
+LDC 1
+LD 0 2    ; newCoord
+CONS
+LD 0 1    ; bestResultsSoFar
+CDR
+CDR
+LD 1 27   ; lam_makeMapInfo
+TAP 3
+LD 0 1    ; bestResultsSoFar ; 916: lam_tryImproveFruit/tiff
+RTN
+LD 0 0    ; sourceCoord ; 918: lam_tryImproveFruit
+LD 0 1    ; bestResultsSoFar
+CDR
+CAR
+LD 0 2    ; newCoord
+LD 1 26   ; lam_closerLocation
+AP 3
+TSEL 906 916         ; t: lam_tryImproveFruit/tift  f: lam_tryImproveFruit/tiff
+LD 0 1    ; bestResultsSoFar ; 926: lam_tryImprovePill/tift
+CAR
+LD 0 1    ; bestResultsSoFar
+CDR
+CAR
+LDC 1
+LD 0 2    ; newCoord
+CONS
+LD 1 27   ; lam_makeMapInfo
+TAP 3
+LD 0 1    ; bestResultsSoFar ; 936: lam_tryImprovePill/tiff
+RTN
+LD 0 0    ; sourceCoord ; 938: lam_tryImprovePill
+LD 0 1    ; bestResultsSoFar
+CDR
+CDR
+LD 0 2    ; newCoord
+LD 1 26   ; lam_closerLocation
+AP 3
+TSEL 926 936         ; t: lam_tryImprovePill/tift  f: lam_tryImprovePill/tiff
+LDC 1                ; 946: lam_tryImprovePowerPill/tift
+LD 0 2    ; newCoord
+CONS
+LD 0 1    ; bestResultsSoFar
+CDR
+CAR
+LD 0 1    ; bestResultsSoFar
+CDR
+CDR
+LD 1 27   ; lam_makeMapInfo
+TAP 3
+LD 0 1    ; bestResultsSoFar ; 957: lam_tryImprovePowerPill/tiff
+RTN
+LD 0 0    ; sourceCoord ; 959: lam_tryImprovePowerPill
+LD 0 1    ; bestResultsSoFar
+CDR
+CDR
+LD 0 2    ; newCoord
+LD 1 26   ; lam_closerLocation
+AP 3
+TSEL 946 957         ; t: lam_tryImprovePowerPill/tift  f: lam_tryImprovePowerPill/tiff
+LDC 1                ; 967: lam_closerLocation/tift
+RTN
+LDC 1                ; 969: lam_closerLocation/tiff/tift
+RTN
+LDC 0                ; 971: lam_closerLocation/tiff/tiff
+RTN
+LD 0 0    ; sourceCoord ; 973: lam_closerLocation/tiff
+LD 0 2    ; newCoord
+LD 1 64   ; lam_manhattanDistance
+AP 2
+LD 0 0    ; sourceCoord
+LD 0 1    ; maybeOldCoord
+CDR
+LD 1 64   ; lam_manhattanDistance
+AP 2
+CGTE
+LDC 0
+CEQ
+TSEL 969 971         ; t: lam_closerLocation/tiff/tift  f: lam_closerLocation/tiff/tiff
+LD 0 1    ; maybeOldCoord ; 986: lam_closerLocation
+ATOM
+TSEL 967 973         ; t: lam_closerLocation/tift  f: lam_closerLocation/tiff
+LD 0 0    ; powerPill ; 989: lam_makeMapInfo
+LD 0 1    ; fruit
+LD 0 2    ; pill
+CONS
+CONS
+RTN
+LD 0 0    ; playerCoord ; 995: lam_getInfoFromMap/tlet/tlet
+LDC 0
+LDC 0
+LDC 0
+LD 3 27   ; lam_makeMapInfo
+AP 3
+LD 1 0    ; mapGrid
+CDR
+LD 1 0    ; mapGrid
+CAR
+LDC 0
+LDC 0
+LD 3 29   ; lam_getInfoFromMapRecursive
+TAP 6
+LD 1 0    ; worldState ; 1009: lam_getInfoFromMap/tlet
+CDR
+CAR
+CDR
+CAR
+LDF 995              ; lam_getInfoFromMap/tlet/tlet
+TAP 1
+LD 0 0    ; worldState ; 1016: lam_getInfoFromMap
+CAR
+LDF 1009             ; lam_getInfoFromMap/tlet
+TAP 1
+LD 0 1    ; bestResultsSoFar ; 1020: lam_getInfoFromMapRecursive/tift/tift
+RTN
+LD 0 0    ; sourceCoord ; 1022: lam_getInfoFromMapRecursive/tift/tiff
+LD 0 1    ; bestResultsSoFar
+LD 0 2    ; mapCurrentRow
+CDR
+LD 0 2    ; mapCurrentRow
+CAR
+LD 0 4    ; rowIndex
+LDC 1
+ADD
+LDC 0
+LD 1 29   ; lam_getInfoFromMapRecursive
+TAP 6
+LD 0 2    ; mapCurrentRow ; 1034: lam_getInfoFromMapRecursive/tift
+ATOM
+TSEL 1020 1022       ; t: lam_getInfoFromMapRecursive/tift/tift  f: lam_getInfoFromMapRecursive/tift/tiff
+LD 0 0    ; sourceCoord ; 1037: lam_getInfoFromMapRecursive/tiff
+LD 0 0    ; sourceCoord
+LD 0 1    ; bestResultsSoFar
+LD 0 3    ; mapCurrentCol
+CAR
+LD 0 5    ; colIndex
+LD 0 4    ; rowIndex
+CONS
+LD 1 22   ; lam_tryImproveResults
+AP 4
+LD 0 2    ; mapCurrentRow
+LD 0 3    ; mapCurrentCol
+CDR
+LD 0 4    ; rowIndex
+LD 0 5    ; colIndex
+LDC 1
+ADD
+LD 1 29   ; lam_getInfoFromMapRecursive
+TAP 6
+LD 0 3    ; mapCurrentCol ; 1056: lam_getInfoFromMapRecursive
+ATOM
+TSEL 1034 1037       ; t: lam_getInfoFromMapRecursive/tift  f: lam_getInfoFromMapRecursive/tiff
+LDC 8                ; 1059: lam_getDistanceToBest_Safe/tlet/tlet
+LD 0 0    ; dist
+MUL
+LD 2 1    ; enhancedWorldState
+CAR
+LD 2 2    ; coord
+LD 3 48   ; lam_totalGhostDanger
+AP 2
+ADD
+RTN
+LDC 70               ; 1069: lam_getDistanceToBest_Safe/tlet/ift/lam
+LDC 1
+ADD
+RTN
+LDC 0                ; 1073: lam_getDistanceToBest_Safe/tlet/ift
+LDC 50
+SUB
+LD 0 0    ; distFruit
+LDF 1069             ; lam_getDistanceToBest_Safe/tlet/ift/lam
+LD 2 68   ; fromMaybe
+AP 2
+ADD
+JOIN
+LD 1 0    ; parsedState ; 1082: lam_getDistanceToBest_Safe/tlet/iff
+LD 1 1    ; enhancedWorldState
+LD 1 2    ; coord
+LD 2 56   ; lam_getDistanceToPill
+AP 3
+JOIN
+LDC 70               ; 1088: lam_getDistanceToBest_Safe/tlet/lam
+LDC 1
+ADD
+RTN
+LD 0 0    ; distFruit ; 1092: lam_getDistanceToBest_Safe/tlet
+LDF 1088             ; lam_getDistanceToBest_Safe/tlet/lam
+LD 2 68   ; fromMaybe
+AP 2
+LDC 70
+CGTE
+LDC 0
+CEQ
+SEL 1073 1082        ; t: lam_getDistanceToBest_Safe/tlet/ift  f: lam_getDistanceToBest_Safe/tlet/iff
+LDF 1059             ; lam_getDistanceToBest_Safe/tlet/tlet
+TAP 1
+LD 0 0    ; parsedState ; 1103: lam_getDistanceToBest_Safe
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 57   ; lam_getDistanceToFruit
+AP 3
+LDF 1092             ; lam_getDistanceToBest_Safe/tlet
+TAP 1
+LDC 0                ; 1110: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tift
+RTN
+LDC 1                ; 1112: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet/tift
+LD 5 2    ; coord
+LD 0 0    ; closestGhostPosDist
+CAR
+LD 5 0    ; parsedState
+LD 6 16   ; lam_pathfindDistance
+AP 3
+CONS
+RTN
+LDC 1                ; 1121: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet/tiff
+LD 0 0    ; closestGhostPosDist
+CDR
+CONS
+RTN
+LD 0 0    ; closestGhostPosDist ; 1126: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet
+CDR
+LDC 5
+CGTE
+LDC 0
+CEQ
+TSEL 1112 1121       ; t: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet/tift  f: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet/tiff
+LD 5 17   ; lam_snd  ; 1133: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet
+LD 1 0    ; visibleGhostsPositions
+LD 0 0    ; visibleGhostsApproxDistances
+LD 5 59   ; lam_zip
+AP 2
+LD 5 62   ; lam_minimumOver
+AP 2
+LDF 1126             ; lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet/tlet
+TAP 1
+LD 4 64   ; lam_manhattanDistance ; 1142: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet
+LD 3 2    ; coord
+LD 4 67   ; pAp2_1
+AP 2
+LD 0 0    ; visibleGhostsPositions
+LD 4 4    ; map
+AP 2
+LDF 1133             ; lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet/tlet
+TAP 1
+LD 3 15   ; lam_getGhostPos ; 1151: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff
+LD 0 0    ; visibleGhosts
+LD 3 4    ; map
+AP 2
+LDF 1142             ; lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff/tlet
+TAP 1
+LD 0 0    ; visibleGhosts ; 1157: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet
+ATOM
+TSEL 1110 1151       ; t: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tift  f: lam_getDistToNearestVisibleGhostPathfind/tlet/tlet/tiff
+LD 2 54   ; lam_isGhostVisible ; 1160: lam_getDistToNearestVisibleGhostPathfind/tlet
+LD 0 0    ; ghosts
+LD 2 21   ; lam_filter
+AP 2
+LDF 1157             ; lam_getDistToNearestVisibleGhostPathfind/tlet/tlet
+TAP 1
+LD 0 1    ; worldState ; 1166: lam_getDistToNearestVisibleGhostPathfind
+CDR
+CDR
+CAR
+LDF 1160             ; lam_getDistToNearestVisibleGhostPathfind/tlet
+TAP 1
+LD 1 0    ; parsedState ; 1172: lam_getPlayerDistToNearestGhost/tlet
+LD 1 1    ; worldState
+LD 0 0    ; playerCoord
+LD 2 31   ; lam_getDistToNearestVisibleGhostPathfind
+TAP 3
+LD 0 1    ; worldState ; 1177: lam_getPlayerDistToNearestGhost
+CDR
+CAR
+CDR
+CAR
+LDF 1172             ; lam_getPlayerDistToNearestGhost/tlet
+TAP 1
+LDC 0                ; 1184: lam_inScaredMode/tlet/tift
+RTN
+LDC 1                ; 1186: lam_inScaredMode/tlet/tiff/tift
+RTN
+LDC 0                ; 1188: lam_inScaredMode/tlet/tiff/tiff
+RTN
+LD 0 0    ; playerDistToNearestGhost ; 1190: lam_inScaredMode/tlet/tiff
+CDR
+LDC 4
+CGTE
+LDC 0
+CEQ
+TSEL 1186 1188       ; t: lam_inScaredMode/tlet/tiff/tift  f: lam_inScaredMode/tlet/tiff/tiff
+LD 0 0    ; playerDistToNearestGhost ; 1197: lam_inScaredMode/tlet
+ATOM
+TSEL 1184 1190       ; t: lam_inScaredMode/tlet/tift  f: lam_inScaredMode/tlet/tiff
+LD 0 0    ; parsedState ; 1200: lam_inScaredMode
+LD 0 1    ; worldState
+LD 1 32   ; lam_getPlayerDistToNearestGhost
+AP 2
+LDF 1197             ; lam_inScaredMode/tlet
+TAP 1
+LDC 0                ; 1206: lam_inKillMode/tlet/tift
+RTN
+LDC 1                ; 1208: lam_inKillMode/tlet/tiff/tlet/tift
+RTN
+LDC 0                ; 1210: lam_inKillMode/tlet/tiff/tlet/tiff
+RTN
+LD 1 0    ; playerDistToNearestGhost ; 1212: lam_inKillMode/tlet/tiff/tlet/ift
+CDR
+LDC 6
+CGTE
+LDC 0
+CEQ
+JOIN
+LDC 0                ; 1219: lam_inKillMode/tlet/tiff/tlet/iff
+JOIN
+LD 0 0    ; lamdaManVitality ; 1221: lam_inKillMode/tlet/tiff/tlet
+LDC 4
+LDC 127
+MUL
+CGT
+SEL 1212 1219        ; t: lam_inKillMode/tlet/tiff/tlet/ift  f: lam_inKillMode/tlet/tiff/tlet/iff
+TSEL 1208 1210       ; t: lam_inKillMode/tlet/tiff/tlet/tift  f: lam_inKillMode/tlet/tiff/tlet/tiff
+LD 1 1    ; worldState ; 1228: lam_inKillMode/tlet/tiff
+CDR
+CAR
+CAR
+LDF 1221             ; lam_inKillMode/tlet/tiff/tlet
+TAP 1
+LD 0 0    ; playerDistToNearestGhost ; 1234: lam_inKillMode/tlet
+ATOM
+TSEL 1206 1228       ; t: lam_inKillMode/tlet/tift  f: lam_inKillMode/tlet/tiff
+LD 0 0    ; parsedState ; 1237: lam_inKillMode
+LD 0 1    ; worldState
+LD 1 32   ; lam_getPlayerDistToNearestGhost
+AP 2
+LDF 1234             ; lam_inKillMode/tlet
+TAP 1
+LDC 1                ; 1243: lam_inFightMode/tift
+RTN
+LDC 0                ; 1245: lam_inFightMode/tiff
+RTN
+LD 0 0    ; worldState ; 1247: lam_inFightMode
+CDR
+CAR
+CAR
+LDC 0
+CGT
+TSEL 1243 1245       ; t: lam_inFightMode/tift  f: lam_inFightMode/tiff
+LDC 50000            ; 1254: lam_scoreCoord_scaredMode/tlet/tlet/tlet/tift
+LD 1 0    ; bestDist
+ADD
+RTN
+LD 1 0    ; bestDist ; 1258: lam_scoreCoord_scaredMode/tlet/tlet/tlet/tiff
+RTN
+LD 0 0    ; distanceToVisibleGhost ; 1260: lam_scoreCoord_scaredMode/tlet/tlet/tlet
+LD 2 0    ; playerDistToNearestGhost
+CGT
+LDC 0
+CEQ
+TSEL 1254 1258       ; t: lam_scoreCoord_scaredMode/tlet/tlet/tlet/tift  f: lam_scoreCoord_scaredMode/tlet/tlet/tlet/tiff
+LD 2 0    ; parsedState ; 1266: lam_scoreCoord_scaredMode/tlet/tlet
+LD 2 1    ; enhancedWorldState
+CAR
+LD 2 2    ; coord
+LD 3 31   ; lam_getDistToNearestVisibleGhostPathfind
+AP 3
+CDR
+LDF 1260             ; lam_scoreCoord_scaredMode/tlet/tlet/tlet
+TAP 1
+LD 1 0    ; parsedState ; 1275: lam_scoreCoord_scaredMode/tlet
+LD 1 1    ; enhancedWorldState
+LD 1 2    ; coord
+LD 2 45   ; lam_getDistanceToBest_Scared
+AP 3
+LDF 1266             ; lam_scoreCoord_scaredMode/tlet/tlet
+TAP 1
+LD 0 0    ; parsedState ; 1282: lam_scoreCoord_scaredMode
+LD 0 1    ; enhancedWorldState
+CAR
+LD 1 32   ; lam_getPlayerDistToNearestGhost
+AP 2
+CDR
+LDF 1275             ; lam_scoreCoord_scaredMode/tlet
+TAP 1
+LD 0 0    ; parsedState ; 1290: lam_scoreCoord_safeMode
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 30   ; lam_getDistanceToBest_Safe
+TAP 3
+LD 0 0    ; parsedState ; 1295: lam_scoreCoord_killMode
+LD 0 1    ; enhancedWorldState
+CAR
+LD 0 2    ; coord
+LD 1 31   ; lam_getDistToNearestVisibleGhostPathfind
+AP 3
+CDR
+RTN
+LD 2 2    ; neighbor ; 1303: lam_scoreNeighbor/tlet/tlet
+LD 0 0    ; score
+CONS
+RTN
+LD 1 0    ; parsedState ; 1307: lam_scoreNeighbor/tlet
+LD 1 1    ; enhancedWorldState
+LD 0 0    ; coord
+LD 2 40   ; lam_scoreCoord
+AP 3
+LDF 1303             ; lam_scoreNeighbor/tlet/tlet
+TAP 1
+LD 0 2    ; neighbor ; 1314: lam_scoreNeighbor
+CDR
+LDF 1307             ; lam_scoreNeighbor/tlet
+TAP 1
+LD 0 0    ; parsedState ; 1318: lam_scoreCoord/tift/tift
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 38   ; lam_scoreCoord_killMode
+TAP 3
+LD 0 0    ; parsedState ; 1323: lam_scoreCoord/tift/tiff
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 37   ; lam_scoreCoord_safeMode
+TAP 3
+LD 0 0    ; parsedState ; 1328: lam_scoreCoord/tift
+LD 0 1    ; enhancedWorldState
+CAR
+LD 1 34   ; lam_inKillMode
+AP 2
+TSEL 1318 1323       ; t: lam_scoreCoord/tift/tift  f: lam_scoreCoord/tift/tiff
+LD 0 0    ; parsedState ; 1334: lam_scoreCoord/tiff/tift
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 36   ; lam_scoreCoord_scaredMode
+TAP 3
+LD 0 0    ; parsedState ; 1339: lam_scoreCoord/tiff/tiff
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 37   ; lam_scoreCoord_safeMode
+TAP 3
+LD 0 0    ; parsedState ; 1344: lam_scoreCoord/tiff
+LD 0 1    ; enhancedWorldState
+CAR
+LD 1 33   ; lam_inScaredMode
+AP 2
+TSEL 1334 1339       ; t: lam_scoreCoord/tiff/tift  f: lam_scoreCoord/tiff/tiff
+LD 0 1    ; enhancedWorldState ; 1350: lam_scoreCoord
+CAR
+LD 1 35   ; lam_inFightMode
+AP 1
+TSEL 1328 1344       ; t: lam_scoreCoord/tift  f: lam_scoreCoord/tiff
+LD 0 0    ; element  ; 1355: lam_canStep/tlet
+LDC 0
+CEQ
+LDC 0
+CEQ
+RTN
+LD 0 0    ; parsedState ; 1361: lam_canStep
+LD 0 1    ; dirCoord
+CDR
+CAR
+LD 0 1    ; dirCoord
+CDR
+CDR
+LD 1 8    ; fastMapLookup
+AP 3
+LDF 1355             ; lam_canStep/tlet
+TAP 1
+LD 1 1    ; dir      ; 1372: lam_makeDirsAndCoords/tlet
+LD 1 0    ; coord
+LD 0 0    ; offset
+LD 2 43   ; lam_addPosition
+AP 2
+CONS
+RTN
+LD 0 1    ; dir      ; 1379: lam_makeDirsAndCoords
+LD 1 44   ; lam_getOffset
+AP 1
+LDF 1372             ; lam_makeDirsAndCoords/tlet
+TAP 1
+LD 1 0    ; diffX    ; 1384: lam_addPosition/tlet/tlet
+LD 0 0    ; diffY
+CONS
+RTN
+LD 1 0    ; posA     ; 1388: lam_addPosition/tlet
+CDR
+LD 1 1    ; posB
+CDR
+ADD
+LDF 1384             ; lam_addPosition/tlet/tlet
+TAP 1
+LD 0 0    ; posA     ; 1395: lam_addPosition
+CAR
+LD 0 1    ; posB
+CAR
+ADD
+LDF 1388             ; lam_addPosition/tlet
+TAP 1
+LDC 0                ; 1402: lam_getOffset/tift
+LDC 0
+LDC 1
+SUB
+CONS
+RTN
+LDC 0                ; 1408: lam_getOffset/tiff/tift
+LDC 1
+CONS
+RTN
+LDC 0                ; 1412: lam_getOffset/tiff/tiff/tift
+LDC 1
+SUB
+LDC 0
+CONS
+RTN
+LDC 1                ; 1418: lam_getOffset/tiff/tiff/tiff
+LDC 0
+CONS
+RTN
+LD 0 0    ; dir      ; 1422: lam_getOffset/tiff/tiff
+LDC 3
+CEQ
+TSEL 1412 1418       ; t: lam_getOffset/tiff/tiff/tift  f: lam_getOffset/tiff/tiff/tiff
+LD 0 0    ; dir      ; 1426: lam_getOffset/tiff
+LDC 2
+CEQ
+TSEL 1408 1422       ; t: lam_getOffset/tiff/tift  f: lam_getOffset/tiff/tiff
+LD 0 0    ; dir      ; 1430: lam_getOffset
+LDC 0
+CEQ
+TSEL 1402 1426       ; t: lam_getOffset/tift  f: lam_getOffset/tiff
+LDC 8                ; 1434: lam_getDistanceToBest_Scared/tlet/tlet/tlet/tlet/lam
+RTN
+LDC 8                ; 1436: lam_getDistanceToBest_Scared/tlet/tlet/tlet/tlet
+LD 1 0    ; dist
+LDC 4
+LDC 0
+LDC 8
+LD 0 0    ; distanceToGhost
+LDF 1434             ; lam_getDistanceToBest_Scared/tlet/tlet/tlet/tlet/lam
+LD 5 68   ; fromMaybe
+AP 2
+SUB
+LD 5 46   ; lam_max
+AP 2
+MUL
+ADD
+MUL
+LD 4 1    ; enhancedWorldState
+CAR
+LD 4 2    ; coord
+LD 5 48   ; lam_totalGhostDanger
+AP 2
+ADD
+RTN
+LD 3 1    ; enhancedWorldState ; 1458: lam_getDistanceToBest_Scared/tlet/tlet/tlet
+CAR
+LD 3 2    ; coord
+LD 4 53   ; lam_getDistanceToGhost
+AP 2
+LDF 1436             ; lam_getDistanceToBest_Scared/tlet/tlet/tlet/tlet
+TAP 1
+LDC 10               ; 1465: lam_getDistanceToBest_Scared/tlet/tlet/ift/lam
+LDC 1
+ADD
+RTN
+LDC 0                ; 1469: lam_getDistanceToBest_Scared/tlet/tlet/ift
+LDC 100
+SUB
+LD 1 0    ; distPowerPill
+LDF 1465             ; lam_getDistanceToBest_Scared/tlet/tlet/ift/lam
+LD 3 68   ; fromMaybe
+AP 2
+ADD
+JOIN
+LDC 70               ; 1478: lam_getDistanceToBest_Scared/tlet/tlet/iff/ift/lam
+LDC 1
+ADD
+RTN
+LDC 0                ; 1482: lam_getDistanceToBest_Scared/tlet/tlet/iff/ift
+LDC 50
+SUB
+LD 0 0    ; distFruit
+LDF 1478             ; lam_getDistanceToBest_Scared/tlet/tlet/iff/ift/lam
+LD 3 68   ; fromMaybe
+AP 2
+ADD
+JOIN
+LD 2 0    ; parsedState ; 1491: lam_getDistanceToBest_Scared/tlet/tlet/iff/iff
+LD 2 1    ; enhancedWorldState
+LD 2 2    ; coord
+LD 3 56   ; lam_getDistanceToPill
+AP 3
+JOIN
+LDC 70               ; 1497: lam_getDistanceToBest_Scared/tlet/tlet/iff/lam
+LDC 1
+ADD
+RTN
+LD 0 0    ; distFruit ; 1501: lam_getDistanceToBest_Scared/tlet/tlet/iff
+LDF 1497             ; lam_getDistanceToBest_Scared/tlet/tlet/iff/lam
+LD 3 68   ; fromMaybe
+AP 2
+LDC 70
+CGTE
+LDC 0
+CEQ
+SEL 1482 1491        ; t: lam_getDistanceToBest_Scared/tlet/tlet/iff/ift  f: lam_getDistanceToBest_Scared/tlet/tlet/iff/iff
+JOIN
+LDC 10               ; 1511: lam_getDistanceToBest_Scared/tlet/tlet/lam
+LDC 1
+ADD
+RTN
+LD 1 0    ; distPowerPill ; 1515: lam_getDistanceToBest_Scared/tlet/tlet
+LDF 1511             ; lam_getDistanceToBest_Scared/tlet/tlet/lam
+LD 3 68   ; fromMaybe
+AP 2
+LDC 10
+CGTE
+LDC 0
+CEQ
+SEL 1469 1501        ; t: lam_getDistanceToBest_Scared/tlet/tlet/ift  f: lam_getDistanceToBest_Scared/tlet/tlet/iff
+LDF 1458             ; lam_getDistanceToBest_Scared/tlet/tlet/tlet
+TAP 1
+LD 1 0    ; parsedState ; 1526: lam_getDistanceToBest_Scared/tlet
+LD 1 1    ; enhancedWorldState
+LD 1 2    ; coord
+LD 2 57   ; lam_getDistanceToFruit
+AP 3
+LDF 1515             ; lam_getDistanceToBest_Scared/tlet/tlet
+TAP 1
+LD 0 0    ; parsedState ; 1533: lam_getDistanceToBest_Scared
+LD 0 1    ; enhancedWorldState
+LD 0 2    ; coord
+LD 1 58   ; lam_getDistanceToPowerPill
+AP 3
+LDF 1526             ; lam_getDistanceToBest_Scared/tlet
+TAP 1
+LD 0 0    ; v0       ; 1540: lam_max/tift
+RTN
+LD 0 1    ; v1       ; 1542: lam_max/tiff
+RTN
+LD 0 0    ; v0       ; 1544: lam_max
+LD 0 1    ; v1
+CGT
+TSEL 1540 1542       ; t: lam_max/tift  f: lam_max/tiff
+LDC 0                ; 1548: lam_calcGhostDangerAtPoint/tlet/tift
+RTN
+LDC 15               ; 1550: lam_calcGhostDangerAtPoint/tlet/tiff
+LD 0 0    ; dist
+SUB
+RTN
+LD 0 0    ; dist     ; 1554: lam_calcGhostDangerAtPoint/tlet
+LDC 15
+CGT
+TSEL 1548 1550       ; t: lam_calcGhostDangerAtPoint/tlet/tift  f: lam_calcGhostDangerAtPoint/tlet/tiff
+LD 0 0    ; coord    ; 1558: lam_calcGhostDangerAtPoint
+LD 0 1    ; ghost
+CDR
+CAR
+LD 1 64   ; lam_manhattanDistance
+AP 2
+LDF 1554             ; lam_calcGhostDangerAtPoint/tlet
+TAP 1
+LD 0 0    ; visibleGhostDanger ; 1566: lam_totalGhostDanger/tlet/tlet/tlet
+LD 4 50   ; lam_sum
+TAP 1
+LD 3 1    ; coord    ; 1569: lam_totalGhostDanger/tlet/tlet/lam
+LD 0 0    ; ghost
+LD 4 47   ; lam_calcGhostDangerAtPoint
+TAP 2
+LDF 1569             ; lam_totalGhostDanger/tlet/tlet/lam ; 1573: lam_totalGhostDanger/tlet/tlet
+LD 0 0    ; visibleGhosts
+LD 3 4    ; map
+AP 2
+LDF 1566             ; lam_totalGhostDanger/tlet/tlet/tlet
+TAP 1
+LD 2 54   ; lam_isGhostVisible ; 1579: lam_totalGhostDanger/tlet
+LD 0 0    ; ghosts
+LD 2 21   ; lam_filter
+AP 2
+LDF 1573             ; lam_totalGhostDanger/tlet/tlet
+TAP 1
+LD 0 0    ; worldState ; 1585: lam_totalGhostDanger
+CDR
+CDR
+CAR
+LDF 1579             ; lam_totalGhostDanger/tlet
+TAP 1
+LD 0 0    ; a        ; 1591: lam_count
+LDC 1
+ADD
+RTN
+LD 1 51   ; lam_plus ; 1595: lam_sum
+LDC 0
+LD 0 0    ; list
+LD 1 52   ; lam_foldl
+TAP 3
+LD 0 0    ; a        ; 1600: lam_plus
+LD 0 1    ; b
+ADD
+RTN
+LD 0 1    ; accum    ; 1604: lam_foldl/tift
+RTN
+LD 0 0    ; function ; 1606: lam_foldl/tiff
+LD 0 1    ; accum
+LD 0 2    ; list
+CAR
+LD 0 0    ; function
+AP 2
+LD 0 2    ; list
+CDR
+LD 1 52   ; lam_foldl
+TAP 3
+LD 0 2    ; list     ; 1616: lam_foldl
+ATOM
+TSEL 1604 1606       ; t: lam_foldl/tift  f: lam_foldl/tiff
+LDC 0                ; 1619: lam_getDistanceToGhost/tlet/tlet/tlet/tift
+RTN
+LDC 1                ; 1621: lam_getDistanceToGhost/tlet/tlet/tlet/tiff
+LD 4 55   ; lam_identity
+LD 0 0    ; visibleGhostDistances
+LD 4 62   ; lam_minimumOver
+AP 2
+CONS
+RTN
+LD 0 0    ; visibleGhostDistances ; 1628: lam_getDistanceToGhost/tlet/tlet/tlet
+ATOM
+TSEL 1619 1621       ; t: lam_getDistanceToGhost/tlet/tlet/tlet/tift  f: lam_getDistanceToGhost/tlet/tlet/tlet/tiff
+LD 3 1    ; coord    ; 1631: lam_getDistanceToGhost/tlet/tlet/lam
+LD 0 0    ; ghost
+CDR
+CAR
+LD 4 64   ; lam_manhattanDistance
+TAP 2
+LDF 1631             ; lam_getDistanceToGhost/tlet/tlet/lam ; 1637: lam_getDistanceToGhost/tlet/tlet
+LD 0 0    ; visibleGhosts
+LD 3 4    ; map
+AP 2
+LDF 1628             ; lam_getDistanceToGhost/tlet/tlet/tlet
+TAP 1
+LD 2 54   ; lam_isGhostVisible ; 1643: lam_getDistanceToGhost/tlet
+LD 0 0    ; ghosts
+LD 2 21   ; lam_filter
+AP 2
+LDF 1637             ; lam_getDistanceToGhost/tlet/tlet
+TAP 1
+LD 0 0    ; worldState ; 1649: lam_getDistanceToGhost
+CDR
+CDR
+CAR
+LDF 1643             ; lam_getDistanceToGhost/tlet
+TAP 1
+LD 0 0    ; ghost    ; 1655: lam_isGhostVisible
+CAR
+LDC 2
+CEQ
+LDC 0
+CEQ
+RTN
+LD 0 0    ; a        ; 1662: lam_identity
+RTN
+LD 1 2    ; coord    ; 1664: lam_getDistanceToPill/tlet
+LD 0 0    ; pill
+LD 1 0    ; parsedState
+LD 2 16   ; lam_pathfindDistance
+TAP 3
+LD 0 1    ; enhancedWorldState ; 1669: lam_getDistanceToPill
+CDR
+CDR
+CDR
+CDR
+LDF 1664             ; lam_getDistanceToPill/tlet
+TAP 1
+LDC 0                ; 1676: lam_getDistanceToFruit/tift
+RTN
+LDC 1                ; 1678: lam_getDistanceToFruit/tiff
+LD 0 2    ; coord
+LD 0 1    ; enhancedWorldState
+CDR
+CDR
+CAR
+CDR
+LD 0 0    ; parsedState
+LD 1 16   ; lam_pathfindDistance
+AP 3
+CONS
+RTN
+LD 0 1    ; enhancedWorldState ; 1690: lam_getDistanceToFruit
+CAR
+CDR
+CDR
+CDR
+LDC 0
+CEQ
+TSEL 1676 1678       ; t: lam_getDistanceToFruit/tift  f: lam_getDistanceToFruit/tiff
+LDC 0                ; 1698: lam_getDistanceToPowerPill/tift
+RTN
+LDC 1                ; 1700: lam_getDistanceToPowerPill/tiff
+LD 0 2    ; coord
+LD 0 1    ; enhancedWorldState
+CDR
+CAR
+CDR
+LD 0 0    ; parsedState
+LD 1 16   ; lam_pathfindDistance
+AP 3
+CONS
+RTN
+LD 0 1    ; enhancedWorldState ; 1711: lam_getDistanceToPowerPill
+CDR
+CAR
+ATOM
+TSEL 1698 1700       ; t: lam_getDistanceToPowerPill/tift  f: lam_getDistanceToPowerPill/tiff
+LDC 0                ; 1716: lam_zip/tift
+RTN
+LDC 0                ; 1718: lam_zip/tiff/tift
+RTN
+LD 0 0    ; list0    ; 1720: lam_zip/tiff/tiff
+CAR
+LD 0 1    ; list1
+CAR
+CONS
+LD 0 0    ; list0
+CDR
+LD 0 1    ; list1
+CDR
+LD 1 59   ; lam_zip
+AP 2
+CONS
+RTN
+LD 0 1    ; list1    ; 1733: lam_zip/tiff
+ATOM
+TSEL 1718 1720       ; t: lam_zip/tiff/tift  f: lam_zip/tiff/tiff
+LD 0 0    ; list0    ; 1736: lam_zip
+ATOM
+TSEL 1716 1733       ; t: lam_zip/tift  f: lam_zip/tiff
+LD 0 1    ; list     ; 1739: lam_foldr1/tift
+CAR
+RTN
+LD 0 1    ; list     ; 1742: lam_foldr1/tiff
+CAR
+LD 0 0    ; func
+LD 0 1    ; list
+CDR
+LD 1 60   ; lam_foldr1
+AP 2
+LD 0 0    ; func
+TAP 2
+LD 0 1    ; list     ; 1751: lam_foldr1
+LD 1 61   ; lam_hasOneElement
+AP 1
+TSEL 1739 1742       ; t: lam_foldr1/tift  f: lam_foldr1/tiff
+LDC 0                ; 1755: lam_hasOneElement/tift
+RTN
+LDC 1                ; 1757: lam_hasOneElement/tiff/tift
+RTN
+LDC 0                ; 1759: lam_hasOneElement/tiff/tiff
+RTN
+LD 0 0    ; list     ; 1761: lam_hasOneElement/tiff
+CDR
+ATOM
+TSEL 1757 1759       ; t: lam_hasOneElement/tiff/tift  f: lam_hasOneElement/tiff/tiff
+LD 0 0    ; list     ; 1765: lam_hasOneElement
+ATOM
+TSEL 1755 1761       ; t: lam_hasOneElement/tift  f: lam_hasOneElement/tiff
+LD 1 0    ; func     ; 1768: lam_minimumOver/lam
+LD 0 0    ; v0
+LD 0 1    ; v1
+LD 2 63   ; lam_selectMin
+TAP 3
+LDF 1768             ; lam_minimumOver/lam ; 1773: lam_minimumOver
+LD 0 1    ; list
+LD 1 60   ; lam_foldr1
+TAP 2
+LD 0 1    ; v0       ; 1777: lam_selectMin/tift
+RTN
+LD 0 2    ; v1       ; 1779: lam_selectMin/tiff
+RTN
+LD 0 1    ; v0       ; 1781: lam_selectMin
+LD 0 0    ; func
+AP 1
+LD 0 2    ; v1
+LD 0 0    ; func
+AP 1
+CGTE
+LDC 0
+CEQ
+TSEL 1777 1779       ; t: lam_selectMin/tift  f: lam_selectMin/tiff
+LD 0 0    ; sumDiff  ; 1791: lam_manhattanDistance/tlet/tlet/tlet
+RTN
+LD 0 0    ; absDiff  ; 1793: lam_manhattanDistance/tlet/tlet
+CAR
+LD 0 0    ; absDiff
+CDR
+ADD
+LDF 1791             ; lam_manhattanDistance/tlet/tlet/tlet
+TAP 1
+LD 0 0    ; diff     ; 1800: lam_manhattanDistance/tlet
+LD 2 65   ; lam_abs
+AP 1
+LDF 1793             ; lam_manhattanDistance/tlet/tlet
+TAP 1
+LD 0 0    ; posA     ; 1805: lam_manhattanDistance
+LD 0 1    ; posB
+LD 1 66   ; lam_subtractPos
+AP 2
+LDF 1800             ; lam_manhattanDistance/tlet
+TAP 1
+LD 1 0    ; absX     ; 1811: lam_abs/tlet/tlet
+LD 0 0    ; absY
+CONS
+RTN
+LD 1 0    ; pos      ; 1815: lam_abs/tlet
+CDR
+LD 2 20   ; lam_myAbs
+AP 1
+LDF 1811             ; lam_abs/tlet/tlet
+TAP 1
+LD 0 0    ; pos      ; 1821: lam_abs
+CAR
+LD 1 20   ; lam_myAbs
+AP 1
+LDF 1815             ; lam_abs/tlet
+TAP 1
+LD 1 0    ; diffX    ; 1827: lam_subtractPos/tlet/tlet
+LD 0 0    ; diffY
+CONS
+RTN
+LD 1 0    ; posA     ; 1831: lam_subtractPos/tlet
+CDR
+LD 1 1    ; posB
+CDR
+SUB
+LDF 1827             ; lam_subtractPos/tlet/tlet
+TAP 1
+LD 0 0    ; posA     ; 1838: lam_subtractPos
+CAR
+LD 0 1    ; posB
+CAR
+SUB
+LDF 1831             ; lam_subtractPos/tlet
+TAP 1
+LD 1 1    ; a        ; 1845: pAp2_1/lam
+LD 0 0    ; b
+LD 1 0    ; f
+TAP 2
+LDF 1845             ; pAp2_1/lam ; 1849: pAp2_1
+RTN
+LD 0 1    ; def      ; 1851: fromMaybe/tift
+TAP 0
+LD 0 0    ; v        ; 1853: fromMaybe/tiff
+CDR
+RTN
+LD 0 0    ; v        ; 1856: fromMaybe
+ATOM
+TSEL 1851 1853       ; t: fromMaybe/tift  f: fromMaybe/tiff
+LD 0 1    ; def      ; 1859: caseMaybe/tift
+TAP 0
+LD 0 0    ; v        ; 1861: caseMaybe/tiff
+CDR
+LD 0 2    ; f
+TAP 1
+LD 0 0    ; v        ; 1865: caseMaybe
+ATOM
+TSEL 1859 1861       ; t: caseMaybe/tift  f: caseMaybe/tiff
+LD 0 0    ; loopFunc ; 1868: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/tletrec
+TAP 0
+LD 2 0    ; loopFunc ; 1870: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet/tift
+TAP 0
+LD 0 0    ; testElt  ; 1872: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet/tiff
+CDR
+RTN
+LD 0 0    ; testElt  ; 1875: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet
+ATOM
+TSEL 1870 1872       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet/tiff
+LDC 1                ; 1878: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tift
+LD 5 0    ; bestDir
+CDR
+CONS
+RTN
+LDC 1                ; 1883: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tift
+LD 5 0    ; bestDir
+CDR
+CONS
+RTN
+LDC 3                ; 1888: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam
+LDC 1
+CONS
+RTN
+LDC 0                ; 1892: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam
+LDC 1
+CONS
+RTN
+LDC 1                ; 1896: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam
+LDC 1
+CONS
+RTN
+LDC 2                ; 1900: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam/lam
+LDC 1
+CONS
+RTN
+LD 6 0    ; cur      ; 1904: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam/lam
+LD 14 0   ; refClosed
+CONS
+ST 14 0   ; refClosed ; refClosed
+LDC 0
+RTN
+LD 4 0    ; curPos   ; 1910: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam
+CAR
+LD 4 0    ; curPos
+CDR
+LDC 1
+ADD
+CONS
+LD 3 0    ; prev
+LDF 1900             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam/lam
+LD 18 68  ; fromMaybe
+AP 2
+LD 10 0   ; visit
+AP 2
+LDF 1904             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam/lam
+LD 18 68  ; fromMaybe
+TAP 2
+LD 3 0    ; curPos   ; 1926: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam
+CAR
+LDC 1
+ADD
+LD 3 0    ; curPos
+CDR
+CONS
+LD 2 0    ; prev
+LDF 1896             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam
+LD 17 68  ; fromMaybe
+AP 2
+LD 9 0    ; visit
+AP 2
+LDF 1910             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam/lam
+LD 17 68  ; fromMaybe
+TAP 2
+LD 2 0    ; curPos   ; 1942: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam
+CAR
+LD 2 0    ; curPos
+CDR
+LDC 1
+SUB
+CONS
+LD 1 0    ; prev
+LDF 1892             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam
+LD 16 68  ; fromMaybe
+AP 2
+LD 8 0    ; visit
+AP 2
+LDF 1926             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam/lam
+LD 16 68  ; fromMaybe
+TAP 2
+LD 3 0    ; qpop     ; 1958: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet
+CDR
+ST 11 0   ; refOpen  ; refOpen
+LD 1 0    ; curPos
+CAR
+LDC 1
+SUB
+LD 1 0    ; curPos
+CDR
+CONS
+LD 0 0    ; prev
+LDF 1888             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam
+LD 15 68  ; fromMaybe
+AP 2
+LD 7 0    ; visit
+AP 2
+LDF 1942             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet/lam
+LD 15 68  ; fromMaybe
+TAP 2
+LD 1 0    ; cur      ; 1977: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet
+CDR
+LDF 1958             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet/tlet
+TAP 1
+LD 0 0    ; cur      ; 1981: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet
+CAR
+LDF 1977             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet/tlet
+TAP 1
+LD 0 0    ; qpop     ; 1985: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet
+CAR
+LDF 1981             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet/tlet
+TAP 1
+LDC 0                ; 1989: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/ift
+LD 7 0    ; refOpen
+CAR
+LD 11 72  ; reverseWithAccum
+AP 2
+LD 11 71  ; reloadQueueAndPop
+AP 1
+JOIN
+LD 7 0    ; refOpen  ; 1997: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/iff
+CDR
+CAR
+LD 7 0    ; refOpen
+CAR
+LD 7 0    ; refOpen
+CDR
+CDR
+CONS
+CONS
+JOIN
+LD 4 0    ; stepsRemaining ; 2008: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff
+LDC 1
+SUB
+ST 4 0    ; stepsRemaining ; stepsRemaining
+LD 7 0    ; refOpen
+CDR
+ATOM
+SEL 1989 1997        ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/ift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/iff
+LDF 1985             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff/tlet
+TAP 1
+LD 7 0    ; refOpen  ; 2018: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff
+CAR
+ATOM
+LD 7 0    ; refOpen
+CDR
+ATOM
+MUL
+TSEL 1883 2008       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff/tiff
+LD 4 0    ; stepsRemaining ; 2026: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam
+LDC 0
+CGT
+LDC 0
+CEQ
+TSEL 1878 2018       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam/tiff
+LDF 2026             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/lam ; 2032: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam
+AP 0
+LDF 1875             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam/tlet
+TAP 1
+DUM 1                ; 2036: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet
+LDF 2032             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/lam
+LDF 1868             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet/tletrec
+TRAP 1
+LDC 1                ; 2040: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tift
+LDC 1
+LD 0 1    ; dirDist
+CAR
+LD 0 1    ; dirDist
+CDR
+LDC 1
+ADD
+CONS
+CONS
+CONS
+RTN
+LDC 0                ; 2052: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tift
+RTN
+LDC 0                ; 2054: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tift
+RTN
+LDC 0                ; 2056: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tift
+RTN
+LDC 0                ; 2058: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tift
+RTN
+LD 0 0    ; score    ; 2060: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/ift
+LD 1 1    ; dirDist
+CAR
+LD 1 1    ; dirDist
+CDR
+LDC 1
+ADD
+LD 0 0    ; score
+ADD
+CONS
+CONS
+ST 3 0    ; bestDir  ; bestDir
+LDC 0
+JOIN
+LDC 0                ; 2074: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/iff
+JOIN
+LD 2 0    ; location ; 2076: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/lam
+LDC 1
+LD 2 1    ; dirDist
+CAR
+LD 2 1    ; dirDist
+CDR
+LDC 1
+ADD
+CONS
+CONS
+CONS
+LD 6 0    ; refOpen
+CAR
+CONS
+LD 6 0    ; refOpen
+CDR
+CONS
+ST 6 0    ; refOpen  ; refOpen
+LDC 0
+RTN
+LD 0 0    ; score    ; 2096: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet
+LD 3 0    ; bestDir
+CAR
+CGTE
+LDC 0
+CEQ
+SEL 2060 2074        ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/ift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/iff
+LDF 2076             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet/lam
+LD 9 68   ; fromMaybe
+TAP 2
+LD 0 0    ; location ; 2106: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff
+LD 7 1    ; target
+LD 8 64   ; lam_manhattanDistance
+AP 2
+LDF 2096             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff/tlet
+TAP 1
+LD 7 3    ; map      ; 2112: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff
+LD 0 0    ; location
+CAR
+LD 0 0    ; location
+CDR
+LD 8 8    ; fastMapLookup
+AP 3
+LDC 0
+CEQ
+TSEL 2058 2106       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff/tiff
+LD 8 73   ; coordEq  ; 2122: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff
+LD 0 0    ; location
+LD 8 67   ; pAp2_1
+AP 2
+LD 4 0    ; refOpen
+CDR
+LD 8 76   ; lookup
+AP 2
+ATOM
+LDC 0
+CEQ
+TSEL 2056 2112       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff/tiff
+LD 8 73   ; coordEq  ; 2134: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff
+LD 0 0    ; location
+LD 8 67   ; pAp2_1
+AP 2
+LD 4 0    ; refOpen
+CAR
+LD 8 76   ; lookup
+AP 2
+ATOM
+LDC 0
+CEQ
+TSEL 2054 2122       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff/tiff
+LD 8 73   ; coordEq  ; 2146: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff
+LD 0 0    ; location
+LD 8 67   ; pAp2_1
+AP 2
+LD 3 0    ; refClosed
+LD 8 76   ; lookup
+AP 2
+ATOM
+LDC 0
+CEQ
+TSEL 2052 2134       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff/tiff
+LD 0 0    ; location ; 2157: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam
+LD 7 1    ; target
+LD 8 73   ; coordEq
+AP 2
+TSEL 2040 2146       ; t: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tift  f: pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam/tiff
+LDF 2157             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/lam ; 2162: pathfind/tlet/tlet/tlet/tlet/tlet/tlet
+LDF 2036             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LD 5 2    ; maxSteps ; 2165: pathfind/tlet/tlet/tlet/tlet/tlet
+LDF 2162             ; pathfind/tlet/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LD 2 0    ; defaultDist ; 2168: pathfind/tlet/tlet/tlet/tlet
+LD 3 0    ; defaultDir
+LD 2 0    ; defaultDist
+CONS
+CONS
+LDF 2165             ; pathfind/tlet/tlet/tlet/tlet/tlet
+TAP 1
+LDC 0                ; 2175: pathfind/tlet/tlet/tlet
+LDF 2168             ; pathfind/tlet/tlet/tlet/tlet
+TAP 1
+LDC 0                ; 2178: pathfind/tlet/tlet
+LD 2 0    ; src
+LDC 0
+CONS
+LDC 0
+CONS
+CONS
+LDF 2175             ; pathfind/tlet/tlet/tlet
+TAP 1
+LD 1 0    ; src      ; 2187: pathfind/tlet
+LD 1 1    ; target
+LD 2 64   ; lam_manhattanDistance
+AP 2
+LDF 2178             ; pathfind/tlet/tlet
+TAP 1
+LD 0 0    ; src      ; 2193: pathfind
+LD 0 1    ; target
+LD 1 74   ; manhattanDir
+AP 2
+LDF 2187             ; pathfind/tlet
+TAP 1
+LD 0 0    ; q        ; 2199: reloadQueueAndPop
+CAR
+LDC 0
+LD 0 0    ; q
+CDR
+CONS
+CONS
+RTN
+LD 0 0    ; acc      ; 2207: reverseWithAccum/tift
+RTN
+LD 0 1    ; list     ; 2209: reverseWithAccum/tiff
+CAR
+LD 0 0    ; acc
+CONS
+LD 0 1    ; list
+CDR
+LD 1 72   ; reverseWithAccum
+TAP 2
+LD 0 1    ; list     ; 2217: reverseWithAccum
+ATOM
+TSEL 2207 2209       ; t: reverseWithAccum/tift  f: reverseWithAccum/tiff
+LD 0 0    ; pos1     ; 2220: coordEq
+CAR
+LD 0 1    ; pos2
+CAR
+CEQ
+LD 0 0    ; pos1
+CDR
+LD 0 1    ; pos2
+CDR
+CEQ
+MUL
+RTN
+LDC 1                ; 2232: manhattanDir/tlet/tift/tift
+RTN
+LDC 3                ; 2234: manhattanDir/tlet/tift/tiff
+RTN
+LD 0 0    ; diff     ; 2236: manhattanDir/tlet/tift
+CAR
+LDC 0
+CGT
+TSEL 2232 2234       ; t: manhattanDir/tlet/tift/tift  f: manhattanDir/tlet/tift/tiff
+LDC 0                ; 2241: manhattanDir/tlet/tiff/tift
+RTN
+LDC 2                ; 2243: manhattanDir/tlet/tiff/tiff
+RTN
+LD 0 0    ; diff     ; 2245: manhattanDir/tlet/tiff
+CDR
+LDC 0
+CGT
+TSEL 2241 2243       ; t: manhattanDir/tlet/tiff/tift  f: manhattanDir/tlet/tiff/tiff
+LD 0 0    ; diff     ; 2250: manhattanDir/tlet/ift
+CAR
+JOIN
+LDC 0                ; 2253: manhattanDir/tlet/iff
+LD 0 0    ; diff
+CAR
+SUB
+JOIN
+LD 0 0    ; diff     ; 2258: manhattanDir/tlet/ift
+CDR
+JOIN
+LDC 0                ; 2261: manhattanDir/tlet/iff
+LD 0 0    ; diff
+CDR
+SUB
+JOIN
+LD 0 0    ; diff     ; 2266: manhattanDir/tlet
+CAR
+LDC 0
+CGTE
+SEL 2250 2253        ; t: manhattanDir/tlet/ift  f: manhattanDir/tlet/iff
+LD 0 0    ; diff
+CDR
+LDC 0
+CGTE
+SEL 2258 2261        ; t: manhattanDir/tlet/ift  f: manhattanDir/tlet/iff
+CGT
+TSEL 2236 2245       ; t: manhattanDir/tlet/tift  f: manhattanDir/tlet/tiff
+LD 0 1    ; target   ; 2278: manhattanDir
+LD 0 0    ; src
+LD 1 66   ; lam_subtractPos
+AP 2
+LDF 2266             ; manhattanDir/tlet
+TAP 1
+LDC 0                ; 2284: mapMaybe/tift
+RTN
+LDC 1                ; 2286: mapMaybe/tiff
+LD 0 1    ; ma
+CDR
+LD 0 0    ; f
+AP 1
+CONS
+RTN
+LD 0 1    ; ma       ; 2293: mapMaybe
+ATOM
+TSEL 2284 2286       ; t: mapMaybe/tift  f: mapMaybe/tiff
+LDC 0                ; 2296: lookup/tift
+RTN
+LDC 1                ; 2298: lookup/tiff/tift
+LD 0 1    ; xs
+CAR
+CDR
+CONS
+RTN
+LD 0 0    ; testElt  ; 2304: lookup/tiff/tiff
+LD 0 1    ; xs
+CDR
+LD 1 76   ; lookup
+TAP 2
+LD 0 1    ; xs       ; 2309: lookup/tiff
+CAR
+CAR
+LD 0 0    ; testElt
+AP 1
+TSEL 2298 2304       ; t: lookup/tiff/tift  f: lookup/tiff/tiff
+LD 0 1    ; xs       ; 2315: lookup
+ATOM
+TSEL 2296 2309       ; t: lookup/tift  f: lookup/tiff
+LD 0 1    ; r        ; 2318: appendMaybe/tift
+RTN
+LD 0 0    ; l        ; 2320: appendMaybe/tiff
+RTN
+LD 0 0    ; l        ; 2322: appendMaybe
+ATOM
+TSEL 2318 2320       ; t: appendMaybe/tift  f: appendMaybe/tiff
+LDC 1181566317       ; 2325: foldMap1/tift
+BRK
+CAR
+RTN
+LD 0 2    ; xs       ; 2329: foldMap1/tiff
+CAR
+LD 0 1    ; elem
+AP 1
+LD 0 0    ; combine
+CONS
+LD 0 1    ; elem
+LD 0 2    ; xs
+CDR
+LD 1 79   ; foldMap
+TAP 3
+LD 0 2    ; xs       ; 2340: foldMap1
+ATOM
+TSEL 2325 2329       ; t: foldMap1/tift  f: foldMap1/tiff
+LD 1 0    ; monoid   ; 2343: foldMap/tletrec
+CAR
+LD 1 2    ; xs0
+LD 0 0    ; go
+TAP 2
+LD 0 0    ; z        ; 2348: foldMap/lam/tift
+RTN
+LD 0 0    ; z        ; 2350: foldMap/lam/tiff
+LD 0 1    ; xs
+CAR
+LD 2 1    ; elem
+AP 1
+LD 2 0    ; monoid
+CDR
+AP 2
+LD 0 1    ; xs
+CDR
+LD 1 0    ; go
+TAP 2
+LD 0 1    ; xs       ; 2362: foldMap/lam
+ATOM
+TSEL 2348 2350       ; t: foldMap/lam/tift  f: foldMap/lam/tiff
+DUM 1                ; 2365: foldMap
+LDF 2362             ; foldMap/lam
+LDF 2343             ; foldMap/tletrec
+TRAP 1
+LD 1 0    ; worldState ; 2369: _trampoline
+LD 1 1    ; ghostAI
+LDC 0
+ST 1 0    ; worldState ; worldState
+LDC 0
+ST 1 1    ; ghostAI  ; ghostAI
+LDF 494              ; lambdaManMain
+TAP 2

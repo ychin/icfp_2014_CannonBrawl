@@ -1,0 +1,102 @@
+LDC  1
+LDC  2
+LDC  0
+CONS 
+CONS 
+LDC  3
+LDC  4
+LDC  0
+CONS 
+CONS 
+LDC  0
+CONS 
+CONS 
+LDF  15
+AP  1
+LD  0 0   ; transpose []             = []
+ATOM 
+SEL  19 21
+RTN 
+LDC  0
+JOIN 
+LD  0 0
+CAR 
+ATOM 
+SEL  26 31
+JOIN 
+LD  0 0
+CDR 
+LDF  15
+AP  1
+JOIN 
+LD  0 0
+CAR 
+LD  0 0
+CDR 
+LDF  49
+AP  1
+CONS                         ; (x : [h | h(_) <- xss])
+LD  0 0
+CAR 
+CDR 
+LD  0 0
+CDR 
+LDF  62
+AP  1
+CONS                         ; (xs : [ t | (t) <- xss])
+LDF  15              ; transpose (xs : [ t | (t) <- xss])
+CONS 
+JOIN 
+LD  0 0
+ATOM 
+SEL  19 53
+RTN 
+LD  0 0
+CAR 
+CAR 
+LD  0 0
+CDR 
+LDF  49
+AP  1
+CONS 
+JOIN 
+LD  0 0
+ATOM 
+SEL  19 66
+RTN 
+LD  0 0
+CAR 
+CDR 
+LD  0 0
+CDR 
+LDF  49
+AP  1
+CONS 
+JOIN 
+LD  0 0  ; line
+ATOM     ; isInt(line)
+SEL  98 79
+RTN 
+LD  0 0
+CAR      ; line[0]
+LDC  5   ; player marker
+CEQ      ; player marker == line.first
+SEL  85 89
+JOIN 
+LDC  1   ; var found = true
+LD  0 1  ; curRow
+LD  0 2  ; curCol
+JOIN 
+LD  0 0
+CDR      ; line[]
+LD  0 1  ; curRow
+LD  0 2
+LDC  1
+ADD      ; curCol += 1
+LDF  75  ; findPlayerLine(line + 1, curIndex)
+AP  3
+JOIN 
+LDC  0   ; var found = false
+LDC  0   ; dummy locs for row and col
+LDC  0
+JOIN 

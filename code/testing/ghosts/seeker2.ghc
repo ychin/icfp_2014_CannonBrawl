@@ -1,0 +1,57 @@
+; setup stack
+mov h,255		; setup stack
+
+int 1           ; (a,b) = lambdaman.xy
+mov c,a         ; mov lambdaman.x to c
+mov d,b         ; mov lambdaman.y to d
+
+int 3           ; Get our ghost index in A.
+int 5           ; (a,b) = ghost.xy
+
+sub c,a         ; c = lambdaman.x - ghost.x
+sub d,b         ; d = lambdaman.y - ghost.y
+
+mov a,c         ; e = abs(c)	
+call FUNC_ABS:
+mov e,a
+
+mov a,d         ; f = abs(d)
+call FUNC_ABS:
+mov f,a
+
+jgt JUMP25:,f,e     ; jump if y-diff > x-diff
+
+jlt JUMP22:,c,128   ; jump if lambda-man towards right
+
+mov a,3         ; go left
+int 0           ; 
+hlt             ; 
+
+JUMP22:
+
+mov a,1         ; go right
+int 0           ; 
+hlt             ; 
+
+JUMP25:
+
+jlt JUMP29:,d,128   ; jump if lambda-man towards down
+
+mov a,0         ; go up
+int 0           ;
+hlt             ;
+
+JUMP29:
+
+mov a,2         ; go down
+int 0           ; 
+hlt             ; 
+
+; a = abs(a)
+FUNC_ABS:
+mov b,a
+jlt ABS_END:,a,128
+mov a,0
+sub a,b
+ABS_END:
+ret

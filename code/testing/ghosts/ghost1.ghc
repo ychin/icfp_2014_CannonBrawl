@@ -1,0 +1,7 @@
+hlt
+int 88
+inc a
+inc [b]
+mov a,8 ; ok
+;
+hlt

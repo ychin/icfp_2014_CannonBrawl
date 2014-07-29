@@ -1,0 +1,169 @@
+;   main:
+;   ; DUM  2          ; main [state, playerLoc]
+;   ; LD 1 0          ; initial state of world
+;   ; LDC 0           ; dummy player pos
+;   ; LDC 0
+;   ; CONS
+;   ; LDF initWorld:
+;   ; RAP  1          ;
+;   LDC 0
+;   LDF step:
+;   CONS
+;   RTN
+;   
+;   ;initWorld:
+;   ;LD 0 0          ; load initial state of world in
+;   ;
+;   ;findPlayer:     ; world, curRow
+;   ;LD 0 0          ; world
+;   ;CAR             ; first Line
+;   ;LD 0 1          ; curIndex
+;   ;LDC 0
+;   ;LDF findPlayerLine:  ; findPlayerLine(line, curRow, curCol)
+;   ;AP 3
+;   
+;   step:
+;   LDC 0
+;   LDC 1
+;   CONS
+;   RTN
+;   
+
+; Test code
+LDC 1
+LDC 2
+LDC 0
+CONS
+CONS
+LDC 3
+LDC 4
+LDC 0
+CONS
+CONS
+LDC 0
+CONS
+CONS
+
+LDF transpose:
+AP 1
+
+; Transpose
+;   transpose []             = []
+;   transpose ([]   : xss)   = transpose xss
+;   transpose ((x:xs) : xss) = (x : [h | (h:_) <- xss]) : transpose (xs : [ t | (_:t) <- xss])
+transpose:
+LD 0 0   ; transpose []             = []
+ATOM
+SEL transposeEmptyArray: transposeNonEmptyArray:
+RTN
+
+transposeEmptyArray:
+LDC 0
+JOIN
+
+transposeNonEmptyArray:
+LD 0 0
+CAR
+ATOM
+SEL transposeFirstItemEmpty: transposeNormal:
+JOIN
+
+transposeFirstItemEmpty:    ; transpose([] : xss) = transpose xss
+LD 0 0
+CDR
+LDF transpose:
+AP 1
+JOIN
+
+transposeNormal:            ; transpose ((x:xs) : xss) = (x : [h | (h:_) <- xss]) : transpose (xs : [ t | (_:t) <- xss])
+LD 0 0
+CAR
+LD 0 0
+CDR
+LDF transposePickFirst:
+AP 1
+CONS                        ; (x : [h | h(h:_) <- xss])
+LD 0 0
+CAR
+CDR
+LD 0 0
+CDR
+LDF transposePickSecond:
+AP 1
+CONS                        ; (xs : [ t | (_:t) <- xss])
+LDF transpose:              ; transpose (xs : [ t | (_:t) <- xss])
+CONS
+JOIN
+
+transposePickFirst:
+LD 0 0
+ATOM
+SEL transposeEmptyArray: transposePickFirstNormal:
+RTN
+transposePickFirstNormal:
+LD 0 0
+CAR
+CAR
+LD 0 0
+CDR
+LDF transposePickFirst:
+AP 1
+CONS
+JOIN
+
+transposePickSecond:
+LD 0 0
+ATOM
+SEL transposeEmptyArray: transposePickSecondNormal:
+RTN
+transposePickSecondNormal:
+LD 0 0
+CAR
+CDR
+LD 0 0
+CDR
+LDF transposePickFirst:
+AP 1
+CONS
+JOIN
+
+
+; Player finding
+
+
+findPlayerLine: ; line, curRow, curCol
+LD 0 0  ; line
+ATOM    ; isInt(line)
+SEL findPlayerLineEnd: findPlayerLineNext:
+RTN
+
+findPlayerLineNext:
+LD 0 0
+CAR     ; line[0]
+LDC 5   ; player marker
+CEQ     ; player marker == line.first
+SEL findPlayerLineFound: findPlayerLineNotFound:
+JOIN
+
+findPlayerLineFound:
+LDC 1   ; var found = true
+LD 0 1  ; curRow
+LD 0 2  ; curCol
+JOIN
+
+findPlayerLineNotFound:
+LD 0 0
+CDR     ; line[1:]
+LD 0 1  ; curRow
+LD 0 2
+LDC 1
+ADD     ; curCol += 1
+LDF findPlayerLine:  ; findPlayerLine(line + 1, curIndex)
+AP 3
+JOIN
+
+findPlayerLineEnd:
+LDC 0   ; var found = false
+LDC 0   ; dummy locs for row and col
+LDC 0
+JOIN

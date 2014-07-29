@@ -1,0 +1,55 @@
+; Go up if our x-ordinate is even, or down if it is odd.
+int 1          ; (a,b) = lambdaman.xy
+mov c,a        ; mov lambdaman.x to c
+mov d,b        ; mov lambdaman.y to d
+
+int 3          ; Get our ghost index in A.
+int 5          ; (a,b) = ghost.xy
+
+sub c,a        ; c = lambdaman.x - ghost.x
+sub d,b        ; d = lambdaman.y - ghost.y
+
+mov e,c        ; e = abs(c)
+jlt 12,e,128
+mov h,e
+mov e,0
+sub e,h
+
+;LINE 12
+
+mov f,d        ; f = abs(d)
+jlt 17,f,128
+mov h,f
+mov f,0
+sub f,h
+
+;LINE 17
+
+jgt 25,f,e     ; jump if y-diff > x-diff
+
+jlt 22,c,128   ; jump if lambda-man towards right
+
+mov a,3        ; go left
+int 0          ; 
+hlt            ; 
+
+;LINE 22
+
+mov a,1        ; go right
+int 0          ; 
+hlt            ; 
+
+;LINE 25
+
+jlt 29,d,128   ; jump if lambda-man towards down
+
+mov a,0        ; go up
+int 0          ;
+hlt            ;
+
+;LINE 29
+
+mov a,2        ; go down
+int 0          ; 
+hlt            ; 
+

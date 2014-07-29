@@ -1,0 +1,219 @@
+;-----------------------------------------------------------------------------
+; setup stack
+;-----------------------------------------------------------------------------
+mov h,255				; setup stack
+
+;-----------------------------------------------------------------------------
+; load state
+;-----------------------------------------------------------------------------
+int 1					; (a,b) = lambdaman.xy
+mov $LM_X,a 
+mov $LM_Y,b
+
+int 3					; Get our ghost index in A.
+int 6
+mov $VITALITY,a
+mov $DIRECTION,b
+
+int 3					; Get our ghost index in A.
+int 5					; (a,b) = ghost.xy
+mov $GHOST_X,a
+mov $GHOST_Y,b
+
+sub $LM_X,$GHOST_X		; store lambdaman position as delta
+sub $LM_Y,$GHOST_Y		;
+
+mov a,$LM_X				; e = abs(c)	
+call FUNC_ABS:
+mov $ABSDIFF_X,a
+
+mov a,$LM_Y				; f = abs(d)
+call FUNC_ABS:
+mov $ABSDIFF_Y,a
+
+;-----------------------------------------------------------------------------
+; 
+;-----------------------------------------------------------------------------
+
+jeq IN_FRIGHT_MODE:,$VITALITY,1
+
+;-----------------------------------------------------------------------------
+; normal mode
+;-----------------------------------------------------------------------------
+
+jgt NM_JUMP25:,$ABSDIFF_Y,$ABSDIFF_X     ; jump if y-diff > x-diff
+
+	jlt NM_JUMP22:,$LM_X,128   ; jump if lambda-man towards right
+
+		mov $DIR1,3         ; go left
+		mov pc,NM_TRY_DIR1:
+
+	NM_JUMP22:
+
+		mov $DIR1,1         ; go right
+		mov pc,NM_TRY_DIR1:
+
+NM_JUMP25:
+
+	jlt NM_JUMP29:,$LM_Y,128   ; jump if lambda-man towards down
+
+		mov $DIR1,0         ; go up
+		mov pc,NM_TRY_DIR1:
+
+	NM_JUMP29:
+
+		mov $DIR1,2         ; go down
+
+NM_TRY_DIR1:
+mov a,$DIR1
+call FUNC_CANGO:
+jeq NM_NEED_DIR2:,a,0
+
+	mov a,$DIR1			; go in direction 1
+	int 0
+	hlt
+
+NM_NEED_DIR2:
+
+jgt NM_DIR2_JUMP1:,$ABSDIFF_Y,$ABSDIFF_X     ; jump if y-diff > x-diff
+
+	jlt NM_DIR2_JUMP3:,$LM_Y,128   ; jump if lambda-man towards up
+
+		mov $DIR2,0         ; go up
+		mov pc,NM_TRY_DIR2:
+
+	NM_DIR2_JUMP3:
+
+		mov $DIR2,2         ; go down
+		mov pc,NM_TRY_DIR2:
+
+NM_DIR2_JUMP1:
+
+	jlt NM_DIR2_JUMP2:,$LM_X,128   ; jump if lambda-man towards right
+
+		mov $DIR2,3         ; go left
+		mov pc,NM_TRY_DIR2:
+
+	NM_DIR2_JUMP2:
+
+		mov $DIR2,1         ; go right
+
+NM_TRY_DIR2:
+mov a,$DIR2			; go in direction 2
+int 0
+hlt
+
+;-----------------------------------------------------------------------------
+; run away in fright mode
+;-----------------------------------------------------------------------------
+IN_FRIGHT_MODE:
+
+jlt FR_JUMP25:,$ABSDIFF_Y,$ABSDIFF_X     ; jump if y-diff < x-diff
+
+	jgt FR_JUMP22:,$LM_X,128   ; jump if lambda-man towards left
+
+		mov $DIR1,3         ; go left
+		mov pc,FR_TRY_DIR1:
+
+	FR_JUMP22:
+
+		mov $DIR1,1         ; go right
+		mov pc,FR_TRY_DIR1:
+
+FR_JUMP25:
+
+	jgt FR_JUMP29:,$LM_Y,128   ; jump if lambda-man towards up
+
+		mov $DIR1,0         ; go up
+		mov pc,FR_TRY_DIR1:
+
+	FR_JUMP29:
+
+		mov $DIR1,2         ; go down
+
+FR_TRY_DIR1:
+mov a,$DIR1
+call FUNC_CANGO:
+jeq FR_NEED_DIR2:,a,0
+
+	mov a,$DIR1			; go in direction 1
+	int 0
+	hlt
+
+FR_NEED_DIR2:
+
+jlt FR_DIR2_JUMP1:,$ABSDIFF_Y,$ABSDIFF_X     ; jump if y-diff > x-diff
+
+	jgt FR_DIR2_JUMP3:,$LM_Y,128   ; jump if lambda-man towards up
+
+		mov $DIR2,0         ; go up
+		mov pc,FR_TRY_DIR2:
+
+	FR_DIR2_JUMP3:
+
+		mov $DIR2,2         ; go down
+		mov pc,FR_TRY_DIR2:
+
+FR_DIR2_JUMP1:
+
+	jgt FR_DIR2_JUMP2:,$LM_X,128   ; jump if lambda-man towards right
+
+		mov $DIR2,3         ; go left
+		mov pc,FR_TRY_DIR2:
+
+	FR_DIR2_JUMP2:
+
+		mov $DIR2,1         ; go right
+
+FR_TRY_DIR2:
+mov a,$DIR2			; go in direction 2
+int 0
+hlt
+
+;-----------------------------------------------------------------------------
+; a = abs(a)
+;-----------------------------------------------------------------------------
+FUNC_ABS:
+mov b,a
+jlt ABS_END:,a,128
+mov a,0
+sub a,b
+ABS_END:
+ret
+
+;-----------------------------------------------------------------------------
+; bool can_go_in_direction(direction reg_a)
+;-----------------------------------------------------------------------------
+FUNC_CANGO:
+mov c,a
+mov b,$DIRECTION
+xor b,2					; b = opposite direction
+jeq CANGO_FALSE:,b,c	; can't go backwards
+
+mov a,$GHOST_X
+mov b,$GHOST_Y
+jgt CANGO_NOTUP:,c,0
+dec b
+mov pc,CANGO_CHECKWALL:
+CANGO_NOTUP:
+jgt CANGO_NOTRIGHT:,c,1
+inc a
+mov pc,CANGO_CHECKWALL:
+CANGO_NOTRIGHT:
+jgt CANGO_NOTDOWN:,c,2
+inc b
+mov pc,CANGO_CHECKWALL:
+CANGO_NOTDOWN:
+dec a
+CANGO_CHECKWALL:
+int 7					; a = map square in direction
+
+jeq CANGO_FALSE:,a,0	; check for wall
+
+mov a,1					; return true
+ret
+
+CANGO_FALSE:
+mov a,0					; return false
+ret
+
