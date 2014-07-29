@@ -39,6 +39,10 @@ To Build and Run
 --------------------------------------------------
 The code is mostly written in Haskell, so you will need to have GHC installed.
 
-The code for the Lambda Man logic is in lambda_utils.hs. To compile it, run lambda_utils.hs in GHC, and the compiled code
-will be outputted to stdout in the console.
+The code for the Lambda Man logic is in lambda_utils.hs. To compile it, use command "runhaskell lambda_utils.hs" and the compiled assembly
+code will be outputted to stdout in the console. Alternatively if you are using Windows / Visual Studio you can open code/icfp2014.sln
+which has build steps set up already.
 
+The code for the simulator is in main.hs. Just compile that and run it.
+
+The pre-compiled ghost AI is in code/ghosts/flanker3.ghc.
