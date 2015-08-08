@@ -1,6 +1,8 @@
 ICFP 2014 Contest
 ==================================================
 
+This was a submission for the ICFP 2014 Contest. For more information see the specification page: http://icfpcontest2014.github.io/
+
 Team Cannon Brawl members
 --------------------------------------------------
 * Ryan Ingram
